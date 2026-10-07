@@ -1,0 +1,117 @@
+<!--
+  index.html
+  Mục đích: Trang chủ nhóm – hiển thị 6 thẻ thành viên + modal thông tin tóm tắt.
+  AI ĐƯỢC SỬA – Chỉ người phụ trách khung sửa.
+-->
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Nhóm 3</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <span class="logo">Portfolio Nhóm 3</span>
+      <a href="#team">Thành viên</a>
+    </nav>
+  </header>
+
+  <!-- ===== BANNER ===== -->
+  <section class="banner">
+    <h1>Chào mừng đến với Portfolio Nhóm 3</h1>
+    <p>Website giới thiệu thành viên nhóm – Bài tập môn Web</p>
+  </section>
+
+  <!-- ===== TEAM GRID ===== -->
+  <section id="team" class="team-section">
+    <h2>Thành viên nhóm</h2>
+    <div class="team-grid">
+
+      <!-- Thẻ thành viên 1: Châu -->
+      <div class="member-card">
+        <img src="images/chau/avatar.jpg" alt="Ảnh Châu" class="member-avatar">
+        <h3 class="member-name">Châu</h3>
+        <p class="member-role">Vai trò - cập nhật sau</p>
+        <button class="btn-view" data-id="chau">Xem</button>
+      </div>
+
+      <!-- Thẻ thành viên 2: QAnh -->
+      <div class="member-card">
+        <img src="images/qanh/avatar.jpg" alt="Ảnh QAnh" class="member-avatar">
+        <h3 class="member-name">QAnh</h3>
+        <p class="member-role">Vai trò - cập nhật sau</p>
+        <button class="btn-view" data-id="qanh">Xem</button>
+      </div>
+
+      <!-- Thẻ thành viên 3: Bảo 1 -->
+      <div class="member-card">
+        <img src="images/bao1/avatar.jpg" alt="Ảnh Bảo 1" class="member-avatar">
+        <h3 class="member-name">Bảo 1</h3>
+        <p class="member-role">Vai trò - cập nhật sau</p>
+        <button class="btn-view" data-id="bao1">Xem</button>
+      </div>
+
+      <!-- Thẻ thành viên 4: Bảo 2 -->
+      <div class="member-card">
+        <img src="images/bao2/avatar.jpg" alt="Ảnh Bảo 2" class="member-avatar">
+        <h3 class="member-name">Bảo 2</h3>
+        <p class="member-role">Vai trò - cập nhật sau</p>
+        <button class="btn-view" data-id="bao2">Xem</button>
+      </div>
+
+      <!-- Thẻ thành viên 5: Huy -->
+      <div class="member-card">
+        <img src="images/huy/avatar.jpg" alt="Ảnh Huy" class="member-avatar">
+        <h3 class="member-name">Huy</h3>
+        <p class="member-role">Vai trò - cập nhật sau</p>
+        <button class="btn-view" data-id="huy">Xem</button>
+      </div>
+
+      <!-- Thẻ thành viên 6: Nam -->
+      <div class="member-card">
+        <img src="images/nam/avatar.jpg" alt="Ảnh Nam" class="member-avatar">
+        <h3 class="member-name">Nam</h3>
+        <p class="member-role">Vai trò - cập nhật sau</p>
+        <button class="btn-view" data-id="nam">Xem</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== MODAL (dùng chung cho 6 thành viên) ===== -->
+  <div class="modal-overlay" id="modal-overlay" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <img src="" alt="" class="modal-avatar" id="modal-avatar">
+      <h3 class="modal-name" id="modal-name"></h3>
+      <p class="modal-mssv" id="modal-mssv"></p>
+      <p class="modal-role" id="modal-role"></p>
+      <p class="modal-intro" id="modal-intro"></p>
+      <div class="modal-skills" id="modal-skills">
+        <!-- Danh sách kỹ năng sẽ được đổ bằng JS -->
+      </div>
+      <div class="modal-social" id="modal-social">
+        <!-- Link social sẽ được đổ bằng JS -->
+      </div>
+      <a href="#" class="btn-portfolio" id="modal-link">Xem portfolio đầy đủ</a>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2024 Portfolio Nhóm 3 – Bài tập môn Web</p>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
+</html>
