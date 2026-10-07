@@ -1,0 +1,102 @@
+<!--
+  qanh.html
+  Mục đích: Trang portfolio cá nhân của Quỳnh Anh.
+  AI ĐƯỢC SỬA – Chỉ Quỳnh Anh sửa.
+-->
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Quỳnh Anh</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/member-common.css">
+  <link rel="stylesheet" href="../css/members/qanh.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="main-nav">
+      <a href="#about">Giới thiệu</a>
+      <a href="#goal">Mục tiêu</a>
+      <a href="#skills">Kỹ năng</a>
+      <a href="#education">Học vấn</a>
+      <a href="#projects">Dự án</a>
+      <a href="#awards">Thành tích</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <h1>Giới thiệu bản thân</h1>
+    </section>
+
+    <section id="goal">
+      <h2>Mục tiêu nghề nghiệp</h2>
+    </section>
+
+    <section id="skills">
+      <h2>Kỹ năng</h2>
+    </section>
+
+    <section id="education">
+      <h2>Học vấn &amp; Hoạt động</h2>
+    </section>
+
+    <section id="projects">
+      <h2>Dự án cá nhân</h2>
+      <div class="project-card">
+        <h3>Tên dự án 1</h3>
+        <p>Mô tả dự án 1 - cập nhật sau</p>
+      </div>
+      <div class="project-card">
+        <h3>Tên dự án 2</h3>
+        <p>Mô tả dự án 2 - cập nhật sau</p>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Chứng chỉ &amp; Giải thưởng</h2>
+    </section>
+
+    <section id="contact">
+      <h2>Liên hệ</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="contact-name">Họ tên</label>
+          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
+          <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" placeholder="Nhập email">
+          <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Nội dung</label>
+          <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
+          <span class="error-message"></span>
+        </div>
+        <button type="submit">Gửi</button>
+      </form>
+      <div id="contact-success" style="display:none;">
+        Gửi thành công! Cảm ơn bạn đã liên hệ.
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <a href="#" class="btn-top">Về đầu trang</a>
+    <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/contact.js"></script>
+  <script src="../js/members/qanh.js"></script>
+
+</body>
+</html>

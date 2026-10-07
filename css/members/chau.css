@@ -1,0 +1,12 @@
+/*
+ * chau.css
+ * Mục đích: Đây là nơi cá nhân hóa giao diện của Châu,
+ *           ghi đè biến màu của base.css nếu muốn.
+ * AI ĐƯỢC SỬA – Chỉ Châu sửa.
+ */
+
+/* Ví dụ ghi đè biến màu:
+ * .page-chau {
+ *   --color-primary: #...;
+ * }
+ */
