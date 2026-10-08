@@ -1,114 +1,208 @@
-<!--
-  index.html
-  Mục đích: Trang chủ nhóm – hiển thị 6 thẻ thành viên + modal thông tin tóm tắt.
-  AI ĐƯỢC SỬA – Chỉ người phụ trách khung sửa.
--->
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Nhóm 3</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/home.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nhóm 03 — Portfolio 6 thành viên, giới thiệu hồ sơ cá nhân, vai trò và kỹ năng." />
+  
+  <title>Nhóm 03 — Portfolio 6 thành viên</title>
+
+  <!-- Google Fonts — Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets theo cấu trúc nhóm -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <nav class="main-nav">
-      <span class="logo">Portfolio Nhóm 3</span>
-      <a href="#team">Thành viên</a>
-    </nav>
-  </header>
-
-  <!-- ===== BANNER ===== -->
-  <section class="banner">
-    <h1>Chào mừng đến với Portfolio Nhóm 3</h1>
-    <p>Website giới thiệu thành viên nhóm – Bài tập môn Web</p>
-  </section>
-
-  <!-- ===== TEAM GRID ===== -->
-  <section id="team" class="team-section">
-    <h2>Thành viên nhóm</h2>
-    <div class="team-grid">
-
-      <!-- Thẻ thành viên 1: Châu -->
-      <div class="member-card">
-        <img src="images/chau/avatar.jpg" alt="Ảnh Châu" class="member-avatar">
-        <h3 class="member-name">Châu</h3>
-        <p class="member-role">Vai trò - cập nhật sau</p>
-        <button class="btn-view" data-id="chau">Xem</button>
-      </div>
-
-      <!-- Thẻ thành viên 2: QAnh -->
-      <div class="member-card">
-        <img src="images/qanh/avatar.jpg" alt="Ảnh QAnh" class="member-avatar">
-        <h3 class="member-name">QAnh</h3>
-        <p class="member-role">Vai trò - cập nhật sau</p>
-        <button class="btn-view" data-id="qanh">Xem</button>
-      </div>
-
-      <!-- Thẻ thành viên 3: Bảo 1 -->
-      <div class="member-card">
-        <img src="images/bao1/avatar.jpg" alt="Ảnh Bảo 1" class="member-avatar">
-        <h3 class="member-name">Bảo 1</h3>
-        <p class="member-role">Vai trò - cập nhật sau</p>
-        <button class="btn-view" data-id="bao1">Xem</button>
-      </div>
-
-      <!-- Thẻ thành viên 4: Bảo 2 -->
-      <div class="member-card">
-        <img src="images/bao2/avatar.jpg" alt="Ảnh Bảo 2" class="member-avatar">
-        <h3 class="member-name">Bảo 2</h3>
-        <p class="member-role">Vai trò - cập nhật sau</p>
-        <button class="btn-view" data-id="bao2">Xem</button>
-      </div>
-
-      <!-- Thẻ thành viên 5: Huy -->
-      <div class="member-card">
-        <img src="images/huy/avatar.jpg" alt="Ảnh Huy" class="member-avatar">
-        <h3 class="member-name">Huy</h3>
-        <p class="member-role">Vai trò - cập nhật sau</p>
-        <button class="btn-view" data-id="huy">Xem</button>
-      </div>
-
-      <!-- Thẻ thành viên 6: Nam -->
-      <div class="member-card">
-        <img src="images/nam/avatar.jpg" alt="Ảnh Nam" class="member-avatar">
-        <h3 class="member-name">Nam</h3>
-        <p class="member-role">Vai trò - cập nhật sau</p>
-        <button class="btn-view" data-id="nam">Xem</button>
-      </div>
-
+  <!-- ============================== -->
+  <!-- PRELOADER -->
+  <!-- ============================== -->
+  <div id="preloader">
+    <div class="preloader-text">
+      <span class="preloader-hello">XIN</span>
+      <span class="preloader-world">CHÀO</span>
     </div>
-  </section>
-
-  <!-- ===== MODAL (dùng chung cho 6 thành viên) ===== -->
-  <div class="modal-overlay" id="modal-overlay" style="display:none;">
-    <div class="modal-content">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <img src="" alt="" class="modal-avatar" id="modal-avatar">
-      <h3 class="modal-name" id="modal-name"></h3>
-      <p class="modal-mssv" id="modal-mssv"></p>
-      <p class="modal-role" id="modal-role"></p>
-      <p class="modal-intro" id="modal-intro"></p>
-      <div class="modal-skills" id="modal-skills">
-        <!-- Danh sách kỹ năng sẽ được đổ bằng JS -->
-      </div>
-      <div class="modal-social" id="modal-social">
-        <!-- Link social sẽ được đổ bằng JS -->
-      </div>
-      <a href="#" class="btn-portfolio" id="modal-link">Xem portfolio đầy đủ</a>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
     </div>
   </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <p>&copy; 2024 Portfolio Nhóm 3 – Bài tập môn Web</p>
+  <!-- ============================== -->
+  <!-- CUSTOM CURSOR (Desktop) -->
+  <!-- ============================== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============================== -->
+  <!-- NAVIGATION BAR -->
+  <!-- ============================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo / Tên nhóm -->
+      <a href="#hero" class="nav-logo" id="navLogo">
+        <span class="nav-logo-text">Nhóm 03</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Trang chủ</a></li>
+        <li><a href="#members" class="nav-link" data-section="members">Thành viên</a></li>
+      </ul>
+
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Chuyển chế độ sáng/tối">
+        <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Mở menu điều hướng">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links" id="mobileNavLinks"></ul>
+  </div>
+
+  <!-- ============================== -->
+  <!-- HERO BANNER -->
+  <!-- ============================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-greeting reveal-text">
+        <span class="hero-wave">👋</span> <span id="heroGreeting">Chào mừng bạn đến với</span>
+      </p>
+      <h1 class="hero-name reveal-text" id="heroTitle">Nhóm 03</h1>
+      <p class="hero-tagline reveal-text" id="heroTagline">Portfolio 6 thành viên — Khám phá hồ sơ cá nhân, vai trò & kỹ năng</p>
+      <div class="hero-cta reveal-text">
+        <a href="#members" class="btn btn-primary" id="heroBtn">
+          <span>Xem thành viên</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Cuộn xuống</span>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SECTION THÀNH VIÊN -->
+  <!-- ============================== -->
+  <section class="section members-section" id="members">
+    <div class="section-container">
+      <div class="section-label reveal-up">
+        <span class="section-number">01</span>
+        <span class="section-title-small">DANH SÁCH THÀNH VIÊN</span>
+      </div>
+      <h2 class="section-heading reveal-up">
+        Gặp gỡ<br/><span class="accent-text">đội ngũ của chúng tôi.</span>
+      </h2>
+      <!-- 6 thẻ được render động bởi home.js từ data.js -->
+      <div class="members-grid reveal-stagger" id="membersGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- MODAL DÙNG CHUNG CHI TIẾT THÀNH VIÊN -->
+  <!-- ============================== -->
+  <div class="modal-overlay" id="memberModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalMemberName">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <!-- Nút đóng (X) góc trên bên phải -->
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Đóng cửa sổ">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Nội dung modal -->
+      <div class="modal-content-scroll">
+        <!-- Thông tin đầu thẻ modal -->
+        <div class="modal-profile-header">
+          <div class="modal-avatar-wrapper">
+            <img class="modal-avatar-img" id="modalAvatarImg" src="" alt="" />
+            <div class="avatar-placeholder modal-placeholder" id="modalAvatarPlaceholder"></div>
+          </div>
+          <div class="modal-profile-meta">
+            <h3 class="modal-member-name" id="modalMemberName"></h3>
+            <div class="modal-badge-group">
+              <span class="modal-member-role" id="modalMemberRole"></span>
+              <span class="modal-member-mssv" id="modalMemberMssv"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giới thiệu ngắn -->
+        <div class="modal-block">
+          <h4 class="modal-block-title">Giới thiệu</h4>
+          <p class="modal-member-intro" id="modalMemberIntro"></p>
+        </div>
+
+        <!-- Kỹ năng (dạng thẻ nhỏ) -->
+        <div class="modal-block">
+          <h4 class="modal-block-title">Kỹ năng</h4>
+          <div class="modal-skills-list" id="modalMemberSkills"></div>
+        </div>
+
+        <!-- Liên kết mạng xã hội -->
+        <div class="modal-block">
+          <h4 class="modal-block-title">Liên hệ & Mạng xã hội</h4>
+          <div class="modal-socials-list" id="modalMemberSocials"></div>
+        </div>
+
+        <!-- Nút dẫn tới portfolio đầy đủ -->
+        <div class="modal-action-footer">
+          <a href="#" class="btn btn-primary modal-full-btn" id="modalFullLink">
+            <span>Xem portfolio đầy đủ</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- FOOTER -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">
+        Thiết kế &amp; Xây dựng với <span class="footer-heart">♥</span> bởi <span id="footerName">Nhóm 03</span>
+      </p>
+      <p class="footer-year" id="footerYear"></p>
+    </div>
   </footer>
 
-  <!-- ===== JS ===== -->
+  <!-- ============================== -->
+  <!-- SCRIPTS -->
+  <!-- ============================== -->
+  <!-- data.js tải trước, sau đó là common.js và home.js -->
   <script src="js/data.js"></script>
   <script src="js/common.js"></script>
   <script src="js/home.js"></script>

@@ -1,11 +1,991 @@
-/*
- * home.css
- * Mục đích: Style cho trang chủ – lưới 6 thẻ thành viên + modal thông tin.
- * AI ĐƯỢC SỬA – Chỉ người phụ trách khung sửa.
- */
+/* ============================================================
+   ðŸŽ¨ HOME PAGE STYLESHEET â€” PORTFOLIO NHÃ“M 03
+   ============================================================
+   Má»¥c Ä‘Ã­ch: Style riÃªng cho trang chá»§ â€” Navbar, Hero Banner,
+   LÆ°á»›i 6 tháº» thÃ nh viÃªn, Modal chi tiáº¿t, Footer & Responsive.
+   AI ÄÆ¯á»¢C Sá»¬A â€“ Chá»‰ ngÆ°á»i phá»¥ trÃ¡ch khung sá»­a.
+   ============================================================ */
 
-/* TODO: Style cho .team-grid (lưới 6 thẻ) */
-/* TODO: Style cho .member-card (ảnh, tên, vai trò, nút Xem) */
-/* TODO: Style cho .modal-overlay, .modal-content (modal thông tin tóm tắt) */
-/* TODO: Style cho nút đóng modal (.modal-close) */
-/* TODO: Responsive cho màn hình nhỏ */
+/* ============================================================
+   THANH ÄIá»€U HÆ¯á»šNG (NAVIGATION BAR)
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 clamp(20px, 5vw, 80px);
+  transition: all var(--transition-medium);
+}
+
+.navbar.scrolled {
+  background: rgba(250, 250, 250, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(10, 10, 10, 0.85);
+}
+
+.nav-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.nav-link.active {
+  color: var(--accent-text);
+  background: var(--accent);
+}
+
+/* NÃºt chuyá»ƒn giao diá»‡n (Theme Toggle) */
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: all var(--transition-medium);
+}
+
+.theme-icon.sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-icon.moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-icon.sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-icon.moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* NÃºt Hamburger (Mobile Menu) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  z-index: 1002;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-medium);
+  transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Lá»›p phá»§ menu thiáº¿t bá»‹ di Ä‘á»™ng */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-nav-links a {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 8px 24px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-medium);
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.mobile-menu.active .mobile-nav-links a {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--accent-text);
+  background: var(--accent);
+}
+
+/* ============================================================
+   PHáº¦N BANNER CHÃNH (HERO BANNER)
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px clamp(20px, 5vw, 80px) 80px;
+}
+
+.hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  animation: floatShape 20s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  right: -10%;
+  animation-duration: 25s;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -5%;
+  left: -5%;
+  animation-duration: 20s;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  top: 30%;
+  left: 20%;
+  animation-duration: 15s;
+  animation-delay: -10s;
+}
+
+@keyframes floatShape {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, -30px) rotate(5deg); }
+  50% { transform: translate(-20px, 20px) rotate(-3deg); }
+  75% { transform: translate(15px, 10px) rotate(2deg); }
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 850px;
+  z-index: 1;
+}
+
+.hero-greeting {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hero-wave {
+  display: inline-block;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--text-primary) 40%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--text-muted), transparent);
+  animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50% { transform: scaleY(0.5); opacity: 0.3; }
+}
+
+/* ============================================================
+   CÃC STYLE DÃ™NG CHUNG CHO SECTION
+   ============================================================ */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.section-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-number {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+.section-title-small {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 56px;
+}
+
+.accent-text {
+  color: var(--accent);
+  filter: brightness(0.65) saturate(1.2);
+}
+
+[data-theme="dark"] .accent-text {
+  filter: none;
+}
+
+/* ============================================================
+   SECTION THÃ€NH VIÃŠN & LÆ¯á»šI THáºº (MEMBERS GRID)
+   ============================================================ */
+.members-section {
+  background: var(--bg-secondary);
+}
+
+/* LÆ°á»›i tháº»: 3 cá»™t desktop */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Tháº» tá»«ng thÃ nh viÃªn */
+.member-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  transition: transform var(--transition-medium),
+              box-shadow var(--transition-medium),
+              border-color var(--transition-medium);
+  overflow: hidden;
+}
+
+/* Dáº£i accent trÃªn Ä‘áº§u tháº» khi hover */
+.member-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-medium);
+}
+
+/* Hiá»‡u á»©ng hover: ná»•i lÃªn, Ä‘á»• bÃ³ng */
+.member-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+.member-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Khung áº£nh Ä‘áº¡i diá»‡n trÃ²n, tá»‰ lá»‡ 1:1 */
+.member-avatar-wrapper {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid var(--border-color);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), transform var(--transition-medium);
+  flex-shrink: 0;
+}
+
+.member-card:hover .member-avatar-wrapper {
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.member-avatar-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Avatar placeholder khi chÆ°a cÃ³ áº£nh hoáº·c áº£nh lá»—i */
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-text);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.member-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.member-role {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.member-view-btn {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   MODAL DÃ™NG CHUNG CHI TIáº¾T THÃ€NH VIÃŠN
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Ná»n má» */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .modal-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Khung modal: Bo gÃ³c, Ä‘á»• bÃ³ng, cuá»™n ná»™i dung */
+.modal-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.92) translateY(24px);
+  transition: transform 0.35s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1) translateY(0);
+}
+
+/* NÃºt X á»Ÿ gÃ³c trÃªn bÃªn pháº£i */
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+/* Cuá»™n Ä‘Æ°á»£c náº¿u ná»™i dung dÃ i */
+.modal-content-scroll {
+  padding: 36px 32px 32px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.modal-content-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-content-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
+}
+
+.modal-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 40px;
+}
+
+.modal-avatar-wrapper {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.modal-avatar-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.modal-placeholder {
+  font-size: 1.8rem;
+}
+
+.modal-profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-member-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.modal-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-member-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.modal-member-mssv {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  display: inline-block;
+}
+
+.modal-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-block-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.modal-member-intro {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Ká»¹ nÄƒng dáº¡ng tháº» nhá» */
+.modal-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal-skill-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-fast);
+}
+
+.modal-skill-tag:hover {
+  border-color: var(--accent);
+}
+
+/* LiÃªn káº¿t máº¡ng xÃ£ há»™i */
+.modal-socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.modal-social-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-social-btn:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.modal-action-footer {
+  margin-top: 6px;
+  display: flex;
+}
+
+.modal-full-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
+   CHÃ‚N TRANG (FOOTER)
+   ============================================================ */
+.footer {
+  background: var(--bg-dark-section);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px clamp(20px, 5vw, 80px);
+}
+
+.footer-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+.footer-heart {
+  color: var(--accent);
+}
+
+.footer-year {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+/* ============================================================
+   THIáº¾T Káº¾ ÄÃP á»¨NG (RESPONSIVE DESIGN)
+   - Desktop (> 992px): 3 cá»™t
+   - Tablet (601px - 992px): 3 cá»™t
+   - Mobile (<= 600px): 2 cá»™t
+   ============================================================ */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Tablet váº«n 3 cá»™t */
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .member-card {
+    padding: 28px 16px;
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+  }
+
+  .section-heading {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile: 2 cá»™t theo yÃªu cáº§u */
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .member-avatar-wrapper {
+    width: 95px;
+    height: 95px;
+  }
+
+  .avatar-placeholder {
+    font-size: 1.8rem;
+  }
+
+  .member-name {
+    font-size: 1.1rem;
+  }
+
+  .modal-content-scroll {
+    padding: 28px 20px 20px;
+    gap: 18px;
+  }
+
+  .modal-profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .modal-profile-meta {
+    align-items: center;
+  }
+
+  .modal-badge-group {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-padding: 80px 0;
+  }
+
+  .nav-container {
+    height: 60px;
+  }
+
+  .hero {
+    padding: 100px 20px 60px;
+    min-height: 90vh;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  /* Mobile nhá»: váº«n giá»¯ 2 cá»™t, tinh chá»‰nh khoáº£ng cÃ¡ch gá»n gÃ ng */
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .member-card {
+    padding: 20px 12px;
+    gap: 12px;
+  }
+
+  .member-avatar-wrapper {
+    width: 75px;
+    height: 75px;
+  }
+
+  .avatar-placeholder {
+    font-size: 1.5rem;
+  }
+
+  .member-name {
+    font-size: 0.95rem;
+  }
+
+  .member-role {
+    font-size: 0.75rem;
+  }
+
+  .member-view-btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
