@@ -14,8 +14,8 @@ const teamInfo = {
   heroTitle: "Nhóm 03",
   heroTagline: "Portfolio 6 thành viên — Khám phá hồ sơ cá nhân, vai trò & kỹ năng",
   theme: {
-    accentColor: "#c8ff00",
-    accentColorDark: "#a8d900",
+    accentColor: "#4F46E5",
+    accentColorDark: "#3730A3",
   },
 };
 
