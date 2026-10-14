@@ -14,8 +14,8 @@ const teamInfo = {
   heroTitle: "Nhóm 03",
   heroTagline: "Portfolio 6 thành viên — Khám phá hồ sơ cá nhân, vai trò & kỹ năng",
   theme: {
-    accentColor: "#c8ff00",
-    accentColorDark: "#a8d900",
+    accentColor: "#4F46E5",
+    accentColorDark: "#3730A3",
   },
 };
 
@@ -36,6 +36,19 @@ const members = [
     },
   },
   {
+    id: "bao1",
+    name: "Ngô Gia Bảo",
+    mssv: "MSSV - 054206002006",
+    role: "Thành viên / Frontend Developer",
+    avatar: "images/chau/avatar.jpg",
+    intro: "Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.",
+    skills: ["HTML5", "CSS3", "Python", "C++", "Git"],
+    link: "members/chau.html",
+    social: {
+      github: "https://github.com/gbao2510",
+      facebook: "https://www.facebook.com/whos.gb",
+      email: "baong2006@ut.edu",
+    },
    
   },
   {

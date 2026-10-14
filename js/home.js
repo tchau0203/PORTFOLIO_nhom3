@@ -4,7 +4,6 @@
    Mục đích: Logic trang chủ — Đổ dữ liệu thành viên từ data.js,
    quản lý modal chi tiết, preloader, custom cursor, navbar,
    menu di động và hiệu ứng tương tác.
-   AI ĐƯỢC SỬA – Chỉ người phụ trách khung sửa.
    ============================================================ */
 
 // ============================================================
@@ -64,7 +63,19 @@ function populatePage() {
   if (heroGreeting) heroGreeting.textContent = teamInfo.greeting;
 
   const heroTitle = document.getElementById("heroTitle");
-  if (heroTitle) heroTitle.textContent = teamInfo.heroTitle || teamInfo.name;
+  if (heroTitle) {
+    const title = teamInfo.heroTitle || teamInfo.name;
+    const titleWith03 = title.match(/^(.*?)(03)$/);
+    if (titleWith03) {
+      heroTitle.textContent = titleWith03[1];
+      const number = document.createElement("span");
+      number.className = "hero-name-number";
+      number.textContent = titleWith03[2];
+      heroTitle.append(number);
+    } else {
+      heroTitle.textContent = title;
+    }
+  }
 
   const heroTagline = document.getElementById("heroTagline");
   if (heroTagline) heroTagline.textContent = teamInfo.heroTagline;

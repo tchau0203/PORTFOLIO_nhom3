@@ -1,7 +1,6 @@
 /*
  * contact.js
  * Mục đích: Validate form liên hệ trên trang cá nhân thành viên.
- * AI ĐƯỢC SỬA – Chỉ người phụ trách khung sửa.
  */
 
 /* TODO: Lắng nghe sự kiện submit trên #contact-form */
