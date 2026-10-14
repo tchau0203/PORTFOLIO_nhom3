@@ -50,7 +50,7 @@ PORTFOLIO_nhom3/
 ├── images/
 │   ├── common/                 ← Ảnh dùng chung
 │   ├── chau/                   ← Ảnh của Châu
-│   ├── qanh/                   ← Ảnh của Quỳnh Anh
+│   ├── qanh/                   ← Ảnh của Quốc Anh
 │   ├── bao1/                   ← Ảnh của Bảo 1
 │   ├── bao2/                   ← Ảnh của Bảo 2
 │   ├── huy/                    ← Ảnh của Huy
