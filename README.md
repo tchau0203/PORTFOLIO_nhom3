@@ -11,8 +11,8 @@ Website gồm 1 trang chủ nhóm và 6 trang cá nhân riêng biệt.
 |-----|-------------|---------------|
 | 1 | chau | *(cập nhật sau)* |
 | 2 | qanh | *(cập nhật sau)* |
-| 3 | ngobao | *(cập nhật sau – cần ghi rõ để phân biệt với bao2)* |
-| 4 | nguyenbao | *(cập nhật sau – cần ghi rõ để phân biệt với bao1)* |
+| 3 | ngobao | *(cập nhật sau – cần ghi rõ để phân biệt với bao1)* |
+| 4 | nguyenbao | *(cập nhật sau – cần ghi rõ để phân biệt với bao2)* |
 | 5 | huy | *(cập nhật sau)* |
 | 6 | nam | *(cập nhật sau)* |
 
