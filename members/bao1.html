@@ -1,20 +1,16 @@
-<!--
-  bao1.html
-  Mục đích: Trang portfolio cá nhân của Bảo 1.
-  AI ĐƯỢC SỬA – Chỉ Bảo 1 sửa.
--->
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Bảo 1</title>
+  <title>Portfolio - Ngô Gia Bảo</title>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/member-common.css">
   <link rel="stylesheet" href="../css/members/bao1.css">
 </head>
 <body>
 
+  <!-- ===== HEADER & NAV ===== -->
   <header class="site-header">
     <nav class="main-nav">
       <a href="#about">Giới thiệu</a>
@@ -27,57 +23,99 @@
     </nav>
   </header>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <main>
 
-    <section id="about">
-      <h1>Giới thiệu bản thân</h1>
+    <!-- Section 1: Giới thiệu bản thân -->
+    <section id="about" class="hero-section">
+      <img src="../images/bao1/avatar.jpg" alt="Ngô Gia Bảo" class="avatar">
+      <h1>Ngô Gia Bảo</h1>
+      <span class="role-badge">Frontend Developer</span>
+      <p class="mssv">MSSV: 054206002006</p>
+      <p class="intro-text">Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.</p>
+      <div class="social-links">
+        <a href="https://github.com/gbao2510" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://www.facebook.com/whos.gb" target="_blank" class="social-btn">Facebook</a>
+        <a href="mailto:baong2006@ut.edu" class="social-btn">Email</a>
+      </div>
     </section>
 
+    <!-- Section 2: Mục tiêu nghề nghiệp -->
     <section id="goal">
       <h2>Mục tiêu nghề nghiệp</h2>
+      <div class="goal-grid">
+        <div class="goal-card">
+          <div class="goal-tag">Ngắn hạn</div>
+          <p>Hoàn thiện kỹ năng Frontend (HTML, CSS, React) và hoàn thành xuất sắc đồ án môn học.</p>
+        </div>
+        <div class="goal-card">
+          <div class="goal-tag">Dài hạn</div>
+          <p>Trở thành một lập trình viên Full-stack chuyên nghiệp, có khả năng quản lý và triển khai các dự án thực tế.</p>
+        </div>
+      </div>
     </section>
 
+    <!-- Section 3: Kỹ năng -->
     <section id="skills">
       <h2>Kỹ năng</h2>
+      <div class="skills-grid">
+        <span class="skill-chip">HTML5</span>
+        <span class="skill-chip">CSS3</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">React</span>
+        <span class="skill-chip">Git</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">C++</span>
+      </div>
     </section>
 
+    <!-- Section 4: Học vấn & Hoạt động -->
     <section id="education">
       <h2>Học vấn &amp; Hoạt động</h2>
+      <ul>
+        <li><strong>Kinh nghiệm:</strong> Từng hoạt động tự do trên nền tảng Fastlance.</li>
+        <li><strong>Hoạt động ngoại khóa:</strong> Tham gia thử nghiệm (Beta Playtest) dự án Golden Spatula trên iOS.</li>
+        <li><strong>Rèn luyện:</strong> Tích cực tham gia các thử thách thể thao, chạy bộ trên Strava.</li>
+      </ul>
     </section>
 
+    <!-- Section 5: Dự án cá nhân -->
     <section id="projects">
       <h2>Dự án cá nhân</h2>
       <div class="project-card">
-        <h3>Tên dự án 1</h3>
-        <p>Mô tả dự án 1 - cập nhật sau</p>
+        <h3>Dự án Web Portfolio</h3>
+        <p>Website giới thiệu thông tin cá nhân và nhóm, xây dựng giao diện chuẩn bằng HTML/CSS/JS thuần, tuân thủ quy trình quản lý mã nguồn qua Git và GitHub.</p>
       </div>
       <div class="project-card">
-        <h3>Tên dự án 2</h3>
-        <p>Mô tả dự án 2 - cập nhật sau</p>
+        <h3>Quản lý kho mã nguồn</h3>
+        <p>Thường xuyên sử dụng GitHub để lưu trữ, quản lý các dự án phần mềm và công cụ hỗ trợ phát triển mã nguồn.</p>
       </div>
     </section>
 
+    <!-- Section 6: Chứng chỉ & Giải thưởng -->
     <section id="awards">
       <h2>Chứng chỉ &amp; Giải thưởng</h2>
+      <ul>
+        <li>Đã từng tham gia và tìm hiểu về kỳ thi chứng chỉ Google Certified Educator.</li>
+        <li><strong>Sở thích:</strong> Thời trang streetwear, tập gym, trải nghiệm các tựa game eSports.</li>
+      </ul>
     </section>
 
+    <!-- Section 7: Form liên hệ -->
     <section id="contact">
       <h2>Liên hệ</h2>
       <form id="contact-form">
         <div class="form-group">
           <label for="contact-name">Họ tên</label>
           <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
-          <span class="error-message"></span>
         </div>
         <div class="form-group">
           <label for="contact-email">Email</label>
           <input type="email" id="contact-email" name="email" placeholder="Nhập email">
-          <span class="error-message"></span>
         </div>
         <div class="form-group">
           <label for="contact-message">Nội dung</label>
           <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
-          <span class="error-message"></span>
         </div>
         <button type="submit">Gửi</button>
       </form>
@@ -88,11 +126,13 @@
 
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <a href="#" class="btn-top">Về đầu trang</a>
     <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
   </footer>
 
+  <!-- ===== JS ===== -->
   <script src="../js/data.js"></script>
   <script src="../js/common.js"></script>
   <script src="../js/contact.js"></script>
