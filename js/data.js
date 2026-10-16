@@ -38,12 +38,12 @@ const members = [
   {
     id: "bao1",
     name: "Ngô Gia Bảo",
-    mssv: "MSSV - 054206002006",
+    mssv: "054206002006",
     role: "Thành viên / Frontend Developer",
-    avatar: "images/chau/avatar.jpg",
+    avatar: "images/bao1/avatar.jpg",
     intro: "Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.",
     skills: ["HTML5", "CSS3", "Python", "C++", "Git"],
-    link: "members/chau.html",
+    link: "members/bao1.html",
     social: {
       github: "https://github.com/gbao2510",
       facebook: "https://www.facebook.com/whos.gb",
