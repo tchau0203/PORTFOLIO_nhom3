@@ -1,6 +1,6 @@
 <!--
   bao2.html
-  Mục đích: Trang portfolio cá nhân của Bảo 2.
+  Mục đích: Trang portfolio cá nhân của Gia Bảo (Bảo 2).
   AI ĐƯỢC SỬA – Chỉ Bảo 2 sửa.
 -->
 <!DOCTYPE html>
@@ -8,91 +8,659 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Bảo 2</title>
+  <title>Portfolio - Gia Bảo (Bảo 2)</title>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/member-common.css">
   <link rel="stylesheet" href="../css/members/bao2.css">
 </head>
-<body>
+<body class="member-bao2-body">
 
-  <header class="site-header">
-    <nav class="main-nav">
-      <a href="#about">Giới thiệu</a>
-      <a href="#goal">Mục tiêu</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#education">Học vấn</a>
-      <a href="#projects">Dự án</a>
-      <a href="#awards">Thành tích</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
+  <!-- ===== HEADER & NAV ===== -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#about" class="brand-logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-name">Gia Bảo</span>
+        <span class="member-tag">Bảo 2</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Mở menu điều hướng">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="#about" class="nav-link active">Giới thiệu</a>
+        <a href="#goal" class="nav-link">Mục tiêu</a>
+        <a href="#skills" class="nav-link">Kỹ năng</a>
+        <a href="#education" class="nav-link">Học vấn</a>
+        <a href="#projects" class="nav-link">Dự án</a>
+        <a href="#awards" class="nav-link">Thành tích</a>
+        <a href="#contact" class="nav-link nav-highlight">Liên hệ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle-btn" class="theme-btn" title="Chuyển chế độ Sáng / Tối">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-container">
 
-    <section id="about">
-      <h1>Giới thiệu bản thân</h1>
-    </section>
+    <!-- Section 1: Giới thiệu bản thân -->
+    <section id="about" class="section-card hero-section">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="status-badge">
+            <span class="status-pulse"></span>
+            <span>Sẵn sàng kết nối &amp; Đón nhận thử thách mới</span>
+          </div>
 
-    <section id="goal">
-      <h2>Mục tiêu nghề nghiệp</h2>
-    </section>
+          <h1 class="hero-title">
+            Xin chào,tôi là <span class="text-gradient">Nguyễn Gia Bảo</span>
+          </h1>
 
-    <section id="skills">
-      <h2>Kỹ năng</h2>
-    </section>
+          <div class="hero-subtitle">
+            <span class="typing-label">Định hướng: </span>
+            <span id="dynamic-typing" class="typing-highlight">Frontend / Fullstack Developer</span>
+            <span class="typing-cursor">|</span>
+          </div>
 
-    <section id="education">
-      <h2>Học vấn &amp; Hoạt động</h2>
-    </section>
+          <p class="hero-bio">
+            Sinh viên chuyên ngành Công nghệ Thông tin đam mê phát triển Web hiện đại, thiết kế UI/UX tinh tế và xây dựng hệ thống mạng tương tác cao. Luôn hướng đến việc viết code sạch (Clean Code), tối ưu tốc độ tải trang và mang đến trải nghiệm người dùng mượt mà nhất.
+          </p>
 
-    <section id="projects">
-      <h2>Dự án cá nhân</h2>
-      <div class="project-card">
-        <h3>Tên dự án 1</h3>
-        <p>Mô tả dự án 1 - cập nhật sau</p>
+          <div class="meta-info-grid">
+            <div class="meta-item">
+              <span class="meta-label">Mã số sinh viên:</span>
+              <strong class="meta-value">075206006255</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Vai trò trong nhóm:</span>
+              <strong class="meta-value">Frontend &amp; UI/UX Developer</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Khu vực:</span>
+              <strong class="meta-value">TP. Hồ Chí Minh, Việt Nam</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Trạng thái:</span>
+              <strong class="meta-value text-success">Đang học tập</strong>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Xem dự án của tôi</a>
+            <a href="#contact" class="btn btn-secondary">Liên hệ trực tiếp</a>
+            <a href="../index.html" class="btn btn-ghost">← Về trang chủ nhóm</a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/bao2-dev" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub Profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.facebook.com/share/1E7DgjVGeA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            <a href="mailto:giabao.dev@example.com" class="social-icon" title="Gửi Email trực tiếp">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-avatar-wrapper">
+          <div class="avatar-card">
+            <div class="avatar-glow"></div>
+            <div class="avatar-frame">
+              <img 
+                src="../images/bao2/avatar.jpg" 
+                alt="Ảnh chân dung Gia Bảo (Bảo 2)" 
+                class="avatar-img"
+                onerror="this.onerror=null; this.src='..images/bao2/avatar.jpg';"
+              >
+            </div>
+            <div class="avatar-caption">
+              <h3 class="caption-name">Gia Bảo (Bảo 2)</h3>
+              <p class="caption-sub">Frontend / Fullstack Developer</p>
+            </div>
+
+            <!-- Floating Tech Badges -->
+            <div class="tech-badge badge-pos-1">⚡ React &amp; Next.js</div>
+            <div class="tech-badge badge-pos-2">🚀 Node &amp; Socket.IO</div>
+            <div class="tech-badge badge-pos-3">🎨 UI/UX &amp; CSS3</div>
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Tên dự án 2</h3>
-        <p>Mô tả dự án 2 - cập nhật sau</p>
+    </section>
+
+    <!-- Section 2: Mục tiêu nghề nghiệp -->
+    <section id="goal" class="section-card">
+      <div class="section-header">
+        <span class="section-kicker">Định hướng tương lai</span>
+        <h2>Mục tiêu nghề nghiệp</h2>
+        <p class="section-desc">Kế hoạch phát triển bản thân theo từng giai đoạn trên con đường trở thành kỹ sư phần mềm</p>
+      </div>
+
+      <div class="goals-grid">
+        <!-- Ngắn hạn -->
+        <div class="goal-box short-term">
+          <div class="goal-icon">🎯</div>
+          <h3 class="goal-heading">Mục tiêu ngắn hạn (6 – 12 tháng)</h3>
+          <ul class="goal-checklist">
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Hoàn thành xuất sắc đồ án Web &amp; Mạng:</strong> Đạt điểm số cao với sản phẩm hoàn thiện chỉn chu, áp dụng tốt các kiến trúc Client-Server.
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Nâng cao chuyên môn Frontend &amp; Fullstack:</strong> Nắm vững TypeScript, ReactJS, Next.js, kiến trúc RESTful API và lập trình Socket thời gian thực.
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Tìm kiếm vị trí thực tập (Internship):</strong> Tham gia vào các dự án thực tế tại doanh nghiệp công nghệ, trau dồi quy trình làm việc nhóm chuyên nghiệp (Agile/Scrum).
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Dài hạn -->
+        <div class="goal-box long-term">
+          <div class="goal-icon">🌟</div>
+          <h3 class="goal-heading">Mục tiêu dài hạn (2 – 5 năm)</h3>
+          <ul class="goal-checklist">
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Trở thành Senior Fullstack Engineer:</strong> Làm chủ các hệ thống phân tán, xử lý tải cao (High Traffic), tối ưu cơ sở dữ liệu và bảo mật thông tin.
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Làm chủ Cloud &amp; DevOps:</strong> Thành thạo Docker, Kubernetes, CI/CD pipeline và dịch vụ đám mây AWS/GCP để tự động hóa quy trình triển khai.
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Đóng góp cộng đồng mã nguồn mở:</strong> Xây dựng các thư viện UI, công cụ hữu ích cho cộng đồng lập trình viên sinh viên và người đi làm.
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="awards">
-      <h2>Chứng chỉ &amp; Giải thưởng</h2>
+    <!-- Section 3: Kỹ năng -->
+    <section id="skills" class="section-card">
+      <div class="section-header">
+        <span class="section-kicker">Năng lực chuyên môn</span>
+        <h2>Kỹ năng công nghệ</h2>
+        <p class="section-desc">Bộ công cụ và công nghệ được áp dụng trực tiếp vào các bài tập lớn và dự án thực tế</p>
+      </div>
+
+      <div class="skills-container">
+        <!-- Nhóm 1: Frontend -->
+        <div class="skill-category">
+          <div class="category-title">
+            <span class="cat-icon">💻</span>
+            <h3>Frontend Development</h3>
+          </div>
+          
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>HTML5, CSS3 &amp; SASS</span>
+              <span class="skill-percent">30%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>JavaScript (ES6+) &amp; TypeScript</span>
+              <span class="skill-percent">45%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>React.js / Next.js / Vite</span>
+              <span class="skill-percent">40%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>Responsive Web &amp; CSS Grid/Flexbox</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Nhóm 2: Backend & Lập trình mạng -->
+        <div class="skill-category">
+          <div class="category-title">
+            <span class="cat-icon">⚙️</span>
+            <h3>Backend &amp; Lập trình mạng</h3>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>Node.js &amp; Express.js</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>Socket.IO / TCP &amp; UDP Socket</span>
+              <span class="skill-percent">40%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>RESTful API &amp; Webhook</span>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+          </div>
+
+          <div class="skill-bar-group">
+            <div class="skill-info">
+              <span>Cơ sở dữ liệu (MySQL, MongoDB)</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Nhóm 3: Công cụ & Phương pháp -->
+        <div class="skill-category">
+          <div class="category-title">
+            <span class="cat-icon">🛠️</span>
+            <h3>Công cụ &amp; Quy trình làm việc</h3>
+          </div>
+          <div class="tag-cloud">
+            <span class="tag-badge">Git &amp; GitHub</span>
+            <span class="tag-badge">VS Code</span>
+            <span class="tag-badge">Postman (API Testing)</span>
+            <span class="tag-badge">Figma UI/UX</span>
+            <span class="tag-badge">Chrome DevTools</span>
+            <span class="tag-badge">Linux Terminal</span>
+            <span class="tag-badge">Docker cơ bản</span>
+            <span class="tag-badge">Vercel / Netlify Deploy</span>
+          </div>
+        </div>
+
+        <!-- Nhóm 4: Kỹ năng mềm -->
+        <div class="skill-category">
+          <div class="category-title">
+            <span class="cat-icon">🤝</span>
+            <h3>Kỹ năng mềm &amp; Ngoại ngữ</h3>
+          </div>
+          <div class="tag-cloud">
+            <span class="tag-badge">Làm việc nhóm (Teamwork)</span>
+            <span class="tag-badge">Tư duy phản biện &amp; Debug</span>
+            <span class="tag-badge">Quản lý thời gian</span>
+            <span class="tag-badge">Giao tiếp &amp; Thuyết trình</span>
+            <span class="tag-badge">Đọc hiểu tài liệu Tiếng Anh chuyên ngành</span>
+            <span class="tag-badge">Tự học &amp; Nghiên cứu công nghệ</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Liên hệ</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="contact-name">Họ tên</label>
-          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
-          <span class="error-message"></span>
+    <!-- Section 4: Học vấn / Kinh nghiệm / Hoạt động -->
+    <section id="education" class="section-card">
+      <div class="section-header">
+        <span class="section-kicker">Hành trình phát triển</span>
+        <h2>Học vấn &amp; Hoạt động</h2>
+        <p class="section-desc">Quá trình đào tạo chính quy và các hoạt động nâng cao kỹ năng thực chiến</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 – Hiện tại</span>
+            <h3 class="timeline-title">Đại học - Chuyên ngành Công nghệ Thông tin</h3>
+            <p class="timeline-subtitle">Trường Đại học đào tạo Công nghệ &amp; Kỹ thuật</p>
+            <p class="timeline-desc">
+              Tập trung nghiên cứu chuyên sâu về Kiến trúc máy tính, Lập trình Web, Lập trình Mạng, Cấu trúc dữ liệu &amp; Giải thuật, Hệ quản trị cơ sở dữ liệu. GPA tích lũy dự kiến: <strong>3.5 / 4.0</strong> (Loại Giỏi).
+            </p>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Nhập email">
-          <span class="error-message"></span>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 – 2024</span>
+            <h3 class="timeline-title">Khóa học Chuyên sâu Frontend &amp; Modern Web</h3>
+            <p class="timeline-subtitle">Khóa học trực tuyến &amp; Đào tạo dự án thực tế</p>
+            <p class="timeline-desc">
+              Hoàn thành các khóa học chuyên sâu về JavaScript ES6+, React.js Masterclass, Xây dựng ứng dụng Single Page (SPA) và các kỹ thuật tối ưu hóa SEO, Accessibility (A11y).
+            </p>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="contact-message">Nội dung</label>
-          <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
-          <span class="error-message"></span>
+
+        <!-- Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 – 2024</span>
+            <h3 class="timeline-title">Thành viên Ban Kỹ thuật - CLB Tin học Sinh viên</h3>
+            <p class="timeline-subtitle">Hoạt động ngoại khóa &amp; Chia sẻ công nghệ</p>
+            <p class="timeline-desc">
+              Tham gia tổ chức các buổi workshop chia sẻ kỹ năng lập trình web cho sinh viên khóa dưới. Hỗ trợ kỹ thuật cho các cuộc thi học thuật và Hackathon cấp khoa.
+            </p>
+          </div>
         </div>
-        <button type="submit">Gửi</button>
-      </form>
-      <div id="contact-success" style="display:none;">
-        Gửi thành công! Cảm ơn bạn đã liên hệ.
+      </div>
+    </section>
+
+    <!-- Section 5: Dự án cá nhân -->
+    <section id="projects" class="section-card">
+      <div class="section-header">
+        <span class="section-kicker">Sản phẩm thực tế</span>
+        <h2>Dự án cá nhân &amp; Đồ án môn học</h2>
+        <p class="section-desc">Những sản phẩm tiêu biểu được xây dựng bằng kiến thức lập trình mạng và phát triển web</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="project-filter-buttons">
+        <button class="filter-btn active" data-filter="all">Tất cả dự án</button>
+        <button class="filter-btn" data-filter="network">Lập trình mạng &amp; Socket</button>
+        <button class="filter-btn" data-filter="web">Web &amp; Giao diện</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Realtime Chat App -->
+        <div class="project-card" data-category="network">
+          <div class="project-thumbnail-box">
+            <img 
+              src="../images/bao2/project1.jpg" 
+              alt="Hình ảnh dự án Realtime Chat" 
+              class="project-img"
+              onerror="this.onerror=null; this.src='../images/bao2/project1.svg';"
+            >
+            <div class="project-badge-type">Lập trình Mạng &amp; Web</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Realtime Chat &amp; Audio Room</h3>
+            <p class="project-summary">
+              Hệ thống ứng dụng nhắn tin thời gian thực và phòng trò chuyện âm thanh trực tuyến. Hỗ trợ kết nối đa phòng (Multi-room), thông báo trạng thái online/offline và truyền tải dữ liệu an toàn.
+            </p>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">Socket.IO</span>
+              <span class="tech-pill">WebRTC</span>
+              <span class="tech-pill">Express</span>
+              <span class="tech-pill">CSS3</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="#" class="btn-card-action btn-card-primary" onclick="alert('Dự án đang trong môi trường thử nghiệm localhost!'); return false;">Trải nghiệm Demo</a>
+              <a href="https://github.com/bao2-dev" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-outline">Xem mã nguồn GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Team Portfolio -->
+        <div class="project-card" data-category="web">
+          <div class="project-thumbnail-box">
+            <img 
+              src="../images/bao2/project2.jpg" 
+              alt="Hình ảnh dự án Portfolio Nhóm 3" 
+              class="project-img"
+              onerror="this.onerror=null; this.src='../images/bao2/project2.svg';"
+            >
+            <div class="project-badge-type">Bài tập môn Web</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Portfolio Nhóm 3 - Nền tảng giới thiệu thành viên</h3>
+            <p class="project-summary">
+              Website giới thiệu nhóm 6 thành viên với trang chủ đa tương tác, modal thông tin tóm tắt mượt mà, hỗ trợ giao diện sáng/tối (Dark/Light mode) và form liên hệ chuẩn hóa.
+            </p>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS Grid / Flexbox</span>
+              <span class="tech-pill">JavaScript (ES6+)</span>
+              <span class="tech-pill">LocalStorage</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="../index.html" class="btn-card-action btn-card-primary">Xem trang chủ nhóm</a>
+              <a href="https://github.com/bao2-dev" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-outline">Xem mã nguồn</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: DevTask Kanban -->
+        <div class="project-card" data-category="web">
+          <div class="project-thumbnail-box">
+            <img 
+              src="../images/bao2/project2.svg" 
+              alt="Hình ảnh dự án DevTask Kanban" 
+              class="project-img"
+            >
+            <div class="project-badge-type">Fullstack Web App</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">DevTask - Quản lý công việc cá nhân</h3>
+            <p class="project-summary">
+              Bảng quản trị công việc thông minh theo phương pháp Kanban (To-do, Doing, Done) với tính năng kéo thả trực quan (Drag &amp; Drop), gắn nhãn màu sắc và thống kê năng suất.
+            </p>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">React.js</span>
+              <span class="tech-pill">TailwindCSS</span>
+              <span class="tech-pill">RESTful API</span>
+              <span class="tech-pill">MongoDB</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="#" class="btn-card-action btn-card-primary" onclick="alert('Ứng dụng demo sẽ sớm được công bố!'); return false;">Trải nghiệm Demo</a>
+              <a href="https://github.com/bao2-dev" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-outline">Xem mã nguồn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Chứng chỉ / Giải thưởng / Sở thích -->
+    <section id="awards" class="section-card">
+      <div class="section-header">
+        <span class="section-kicker">Ghi nhận &amp; Đam mê</span>
+        <h2>Chứng chỉ &amp; Thành tích</h2>
+        <p class="section-desc">Những dấu mốc thành tích và các sở thích cá nhân nuôi dưỡng niềm đam mê sáng tạo</p>
+      </div>
+
+      <div class="awards-grid">
+        <!-- Certificate 1 -->
+        <div class="award-item">
+          <div class="award-icon">📜</div>
+          <div class="award-details">
+            <h4>Chứng chỉ Responsive Web Design</h4>
+            <p class="award-org">freeCodeCamp</p>
+            <p class="award-text">Chứng nhận hoàn thành 300 giờ học và xây dựng thành công 5 dự án giao diện web chuẩn responsive.</p>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="award-item">
+          <div class="award-icon">⚡</div>
+          <div class="award-details">
+            <h4>JavaScript Algorithms and Data Structures</h4>
+            <p class="award-org">freeCodeCamp &amp; HackerRank</p>
+            <p class="award-text">Nắm vững các thuật toán giải quyết vấn đề, lập trình hướng đối tượng (OOP) và lập trình hàm (Functional Programming).</p>
+          </div>
+        </div>
+
+        <!-- Award 1 -->
+        <div class="award-item">
+          <div class="award-icon">🏆</div>
+          <div class="award-details">
+            <h4>Top 10 Cuộc thi Sáng tạo Ý tưởng Công nghệ</h4>
+            <p class="award-org">Hackathon Sinh viên cấp khoa 2024</p>
+            <p class="award-text">Phát triển giải pháp website hỗ trợ học tập nhóm và trao đổi tài liệu học thuật theo thời gian thực.</p>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="award-item">
+          <div class="award-icon">🎨</div>
+          <div class="award-details">
+            <h4>Sở thích &amp; Đam mê cá nhân</h4>
+            <p class="award-org">Phong cách sống &amp; Giải trí</p>
+            <div class="interests-tags">
+              <span>🎧 Nghe Lo-fi khi coding</span>
+              <span>♟️ Chơi Cờ Vua rèn luyện tư duy</span>
+              <span>📷 Nhiếp ảnh đường phố</span>
+              <span>🎮 Khám phá game Indie</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Form liên hệ (CUỐI CÙNG) -->
+    <section id="contact" class="section-card contact-section">
+      <div class="section-header">
+        <span class="section-kicker">Kết nối</span>
+        <h2>Liên hệ với tôi</h2>
+        <p class="section-desc">Bạn có dự án thú vị, muốn thảo luận về kỹ thuật hoặc cần hợp tác? Hãy gửi lời nhắn ngay!</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Contact Info Column -->
+        <div class="contact-info-col">
+          <div class="contact-card-box">
+            <h3>Thông tin liên hệ trực tiếp</h3>
+            <p>Tôi luôn cởi mở để trao đổi về các dự án lập trình web, bài tập lớn và cơ hội nghề nghiệp.</p>
+
+            <div class="contact-info-list">
+              <div class="info-row">
+                <span class="info-icon">📍</span>
+                <div>
+                  <strong>Địa chỉ:</strong>
+                  <p>Quận Bình Thạnh, TP. Hồ Chí Minh, Việt Nam</p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="info-icon">✉️</span>
+                <div>
+                  <strong>Email:</strong>
+                  <p><a href="mailto:baong6255@ut.edu.vn">baong6255@ut.edu.vn</a></p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="info-icon">📱</span>
+                <div>
+                  <strong>Số điện thoại:</strong>
+                  <p>(+84) 389 502 846</p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="info-icon">💼</span>
+                <div>
+                  <strong>Thời gian phản hồi:</strong>
+                  <p>Trong vòng 24 giờ</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="copy-email-box">
+              <span id="copy-email-text">baong6255@ut.edu.vn</span>
+              <button type="button" id="copy-email-btn" class="btn-copy">Sao chép email</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column (Đúng các ID quy ước của nhóm) -->
+        <div class="contact-form-col">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Họ và tên của bạn <span class="required">*</span></label>
+              <input type="text" id="contact-name" name="name" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="name">
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Địa chỉ Email <span class="required">*</span></label>
+              <input type="email" id="contact-email" name="email" placeholder="Ví dụ: example@gmail.com" autocomplete="email">
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Nội dung tin nhắn <span class="required">*</span></label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Nhập lời nhắn hoặc câu hỏi của bạn tại đây..."></textarea>
+              <span class="error-message"></span>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="btn btn-submit">
+              <span>Gửi tin nhắn</span>
+              <span class="submit-arrow">→</span>
+            </button>
+          </form>
+
+          <div id="contact-success" class="contact-success-box" style="display:none;">
+            <div class="success-icon">🎉</div>
+            <div class="success-text">
+              <strong>Gửi thành công!</strong>
+              <p>Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi lại tin nhắn của bạn trong thời gian sớm nhất!</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <a href="#" class="btn-top">Về đầu trang</a>
-    <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="copyright">© 2026 <strong>Gia Bảo (Bảo 2)</strong>. Thiết kế cho môn Lập trình Web &amp; Mạng – Nhóm 3.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" class="btn-top">↑ Về đầu trang</a>
+        <a href="../index.html" class="btn-home">🏠 Về trang chủ nhóm</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- ===== JS LIÊN KẾT CHUẨN QUY ƯỚC ===== -->
   <script src="../js/data.js"></script>
   <script src="../js/common.js"></script>
   <script src="../js/contact.js"></script>
