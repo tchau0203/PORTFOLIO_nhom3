@@ -60,6 +60,19 @@ const members = [
     
   },
   {
+    id: "huy",
+    name: "Trần Gia Huy",
+    mssv: "052206016219",
+    role: "Thành viên / QA/QC Engineer",
+    avatar: "images/huy/avatar.jpg", 
+    intro: "Theo đuổi sự hoàn hảo của phần mềm thông qua việc kiểm thử tự động, phân tích hệ thống và thiết kế Test Case tối ưu.",
+    skills: ["C#", "C++", "Python", "Software Testing", "SQL"],
+    link: "members/huy.html",
+    social: {
+      github: "https://github.com/huyt1270",
+      facebook: "#",
+      email: "huyt1270@gmail.com",
+    }
 
   },
   {

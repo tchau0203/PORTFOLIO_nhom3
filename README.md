@@ -11,8 +11,8 @@ Website gồm 1 trang chủ nhóm và 6 trang cá nhân riêng biệt.
 |-----|-------------|---------------|
 | 1 | chau | *(cập nhật sau)* |
 | 2 | qanh | *(cập nhật sau)* |
-| 3 | bao1 | *(cập nhật sau – cần ghi rõ để phân biệt với bao2)* |
-| 4 | bao2 | *(cập nhật sau – cần ghi rõ để phân biệt với bao1)* |
+| 3 | ngobao | *(cập nhật sau – cần ghi rõ để phân biệt với bao1)* |
+| 4 | nguyenbao | *(cập nhật sau – cần ghi rõ để phân biệt với bao2)* |
 | 5 | huy | *(cập nhật sau)* |
 | 6 | nam | *(cập nhật sau)* |
 
@@ -50,7 +50,7 @@ PORTFOLIO_nhom3/
 ├── images/
 │   ├── common/                 ← Ảnh dùng chung
 │   ├── chau/                   ← Ảnh của Châu
-│   ├── qanh/                   ← Ảnh của Quỳnh Anh
+│   ├── qanh/                   ← Ảnh của Quốc Anh
 │   ├── bao1/                   ← Ảnh của Bảo 1
 │   ├── bao2/                   ← Ảnh của Bảo 2
 │   ├── huy/                    ← Ảnh của Huy
