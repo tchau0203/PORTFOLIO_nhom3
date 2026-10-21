@@ -52,8 +52,8 @@ const members = [
   },
   {
     id: "bao2",
-    name: "Gia Bảo (Bảo 2)",
-    mssv: "22000000",
+    name: "Nguyễn Gia Bảo (Bảo 2)",
+    mssv: "075206006255",
     role: "Frontend / Fullstack Developer",
     avatar: "images/bao2/avatar.jpg",
     intro: "Đam mê thiết kế giao diện web hiện đại, tối ưu trải nghiệm người dùng và xây dựng hệ thống mạng tương tác cao.",
@@ -61,8 +61,8 @@ const members = [
     link: "members/bao2.html",
     social: {
       github: "https://github.com/bao2-dev",
-      facebook: "https://facebook.com/",
-      email: "giabao.dev@example.com",
+      facebook: "https://www.facebook.com/share/1E7DgjVGeA/?mibextid=wwXIfr",
+      email: "baong6255@ut.edu.vn",
     },
   },
   {
@@ -82,17 +82,17 @@ const members = [
   },
   {
     id: "huy",
-    name: "Huy - cập nhật sau",
-    mssv: "MSSV - cập nhật sau",
-    role: "Vai trò - cập nhật sau",
+    name: "Trần Gia Huy",
+    mssv: "052206016219",
+    role: "Thành viên / QA/QC Engineer",
     avatar: "images/huy/avatar.jpg",
-    intro: "Giới thiệu ngắn - cập nhật sau",
-    skills: ["HTML5", "CSS3", "JavaScript"],
+    intro: "Theo đuổi sự hoàn hảo của phần mềm thông qua việc kiểm thử tự động, phân tích hệ thống và thiết kế Test Case tối ưu.",
+    skills: ["C#", "C++", "Python", "Software Testing", "SQL"],
     link: "members/huy.html",
     social: {
-      github: "https://github.com/",
-      facebook: "https://facebook.com/",
-      email: "huy@example.com",
+      github: "https://github.com/huyt1270",
+      facebook: "#",
+      email: "huyt1270@gmail.com",
     },
   },
   {
