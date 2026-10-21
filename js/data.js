@@ -38,12 +38,12 @@ const members = [
   {
     id: "bao1",
     name: "Ngô Gia Bảo",
-    mssv: "MSSV - 054206002006",
+    mssv: "054206002006",
     role: "Thành viên / Frontend Developer",
-    avatar: "images/chau/avatar.jpg",
+    avatar: "images/bao1/avatar.jpg",
     intro: "Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.",
     skills: ["HTML5", "CSS3", "Python", "C++", "Git"],
-    link: "members/chau.html",
+    link: "members/bao1.html",
     social: {
       github: "https://github.com/gbao2510",
       facebook: "https://www.facebook.com/whos.gb",
@@ -60,6 +60,19 @@ const members = [
     
   },
   {
+    id: "huy",
+    name: "Trần Gia Huy",
+    mssv: "052206016219",
+    role: "Thành viên / QA/QC Engineer",
+    avatar: "images/huy/avatar.jpg", 
+    intro: "Theo đuổi sự hoàn hảo của phần mềm thông qua việc kiểm thử tự động, phân tích hệ thống và thiết kế Test Case tối ưu.",
+    skills: ["C#", "C++", "Python", "Software Testing", "SQL"],
+    link: "members/huy.html",
+    social: {
+      github: "https://github.com/huyt1270",
+      facebook: "#",
+      email: "huyt1270@gmail.com",
+    }
 
   },
   {
