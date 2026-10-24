@@ -52,7 +52,7 @@ const members = [
   },
   {
     id: "bao2",
-    name: "Nguyễn Gia Bảo (Bảo 2)",
+    name: "Nguyễn Gia Bảo ",
     mssv: "075206006255",
     role: "Frontend / Fullstack Developer",
     avatar: "images/bao2/avatar.jpg",
