@@ -1,9 +1,9 @@
 /* ============================================================
    css/members/bao1.css - Portfolio Ngô Gia Bảo
-   Style Dark Theme & Glassmorphism & Pill Nav (Đồng bộ nhóm 03)
+   Full CSS: Dark Mode, Glassmorphism, Pill Nav & Fixed Alignment
    ============================================================ */
 
-/* 1. BIẾN MÀU (CSS VARIABLES) */
+/* 1. BIẾN MÀU & KHU VỰC CHUNG */
 :root, [data-theme="dark"] {
   --accent: #6366F1;
   --accent-dark: #4F46E5;
@@ -16,9 +16,10 @@
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
   --border-color: rgba(255, 255, 255, 0.08);
+  --error-color: #EF4444;
+  --success-color: #10B981;
 }
 
-/* 2. CHUNG & RESET CƠ BẢN */
 html {
   scroll-behavior: smooth;
 }
@@ -32,92 +33,100 @@ body {
   line-height: 1.6;
 }
 
-/* 3. HEADER & THANH NAV BO TRÒN (PILL NAV) */
+/* 2. HEADER & PILL NAV CÂN BẰNG */
 .site-header {
   background: rgba(11, 11, 20, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 12px 0;
+  padding: 12px 15px;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .main-nav {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 4px;
   background: rgba(255, 255, 255, 0.04);
-  padding: 6px 10px;
-  border-radius: 16px;
-  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .main-nav a {
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   padding: 8px 18px;
   border-radius: 10px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent !important;
+  outline: none;
+  box-shadow: none;
 }
 
+.main-nav a:focus,
+.main-nav a:visited {
+  background: transparent !important;
+  outline: none;
+}
+
+/* Hiệu ứng chọn nút duy nhất */
 .main-nav a:hover,
 .main-nav a.active {
-  background: #4F46E5;
-  color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  background: #4F46E5 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
 }
 
-/* 4. KHUNG NỘI DUNG CHÍNH (MAIN & SECTIONS) */
+/* 3. MAIN LAYOUT & SECTIONS */
 main {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 30px auto;
   padding: 0 20px;
 }
 
 section {
   background: var(--bg-card);
-  padding: 35px;
-  margin-bottom: 30px;
+  padding: 30px;
+  margin-bottom: 25px;
   border-radius: 16px;
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   border-color: rgba(99, 102, 241, 0.3);
 }
 
 h1, h2 {
   color: var(--text-primary);
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
   margin-top: 0;
-  font-weight: 700;
 }
 
-/* 5. SECTION HERO (GIỚI THIỆU) */
+/* 4. HERO SECTION (CĂN GIỮA TUYỆT ĐỐI) */
 .hero-section {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 30px;
   background: transparent;
   border: none;
   box-shadow: none;
-}
-
-.hero-section:hover {
-  transform: none;
-  border-color: transparent;
-  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatar {
@@ -128,6 +137,9 @@ h1, h2 {
   border: 3px solid var(--accent);
   box-shadow: 0 0 30px var(--accent-glow);
   margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   transition: transform 0.4s ease;
 }
 
@@ -140,186 +152,108 @@ h1, h2 {
   background: var(--accent);
   color: #FFF;
   font-weight: 600;
-  padding: 6px 20px;
+  padding: 6px 18px;
   border-radius: 30px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   margin: 10px 0;
-  box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-.mssv {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin: 0 0 16px 0;
-}
+.mssv { color: var(--text-secondary); font-size: 0.85rem; }
 
-.intro-text {
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--text-primary);
-}
-
-/* SOCIAL BUTTONS */
-.social-links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 25px;
-}
-
+.social-links { display: flex; gap: 12px; justify-content: center; margin-top: 20px; }
 .social-btn {
-  padding: 10px 24px;
+  padding: 8px 20px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
 }
+.social-btn:hover { background: var(--accent); color: #FFF; }
 
-.social-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #FFF;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px var(--accent-glow);
-}
-
-/* 6. MỤC TIÊU & DỰ ÁN */
-.goal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.goal-card, .project-card {
+/* 5. GOAL & SKILLS GRID */
+.goal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 15px; }
+.goal-card {
   background: rgba(255, 255, 255, 0.02);
-  padding: 24px;
+  padding: 20px;
   border-radius: 12px;
-  border: 1px solid var(--border-color);
   border-left: 4px solid var(--accent);
-  transition: background 0.3s ease;
-  margin-bottom: 15px;
 }
+.goal-tag { font-weight: 700; color: var(--accent); font-size: 0.8rem; margin-bottom: 6px; }
 
-.goal-card:hover, .project-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.goal-tag {
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-}
-
-/* 7. SKILL CHIPS */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
+.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .skill-chip {
   background: rgba(99, 102, 241, 0.1);
   color: #A5A6F6;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 500;
-  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   border: 1px solid rgba(99, 102, 241, 0.2);
-  transition: all 0.3s ease;
 }
 
-.skill-chip:hover {
-  background: var(--accent);
-  color: #FFF;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px var(--accent-glow);
+/* 6. DỰ ÁN CÁ NHÂN */
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 15px;
 }
-
-/* 8. HỌC VẤN & THÀNH TÍCH */
-#education ul, #awards ul {
-  padding-left: 20px;
-  margin-top: 15px;
-}
-
-#education li, #awards li {
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-/* 9. FORM LIÊN HỆ */
-#contact-form .form-group {
-  margin-bottom: 20px;
-}
-
-#contact-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
+.project-card h3 { margin-top: 0; color: var(--text-primary); font-size: 1.1rem; }
+.project-tech { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.project-tech span {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
   color: var(--text-secondary);
 }
+.project-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+.project-link:hover { text-decoration: underline; }
 
+/* 7. FORM LIÊN HỆ & VALIDATE */
+#contact-form .form-group { margin-bottom: 16px; text-align: left; }
+#contact-form label { display: block; margin-bottom: 6px; font-size: 0.88rem; color: var(--text-secondary); }
 #contact-form input, #contact-form textarea {
   width: 100%;
-  padding: 12px 16px;
-  background: rgba(0, 0, 0, 0.25);
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--text-primary);
   box-sizing: border-box;
-  font-family: inherit;
-  transition: border-color 0.3s;
 }
-
-#contact-form input:focus, #contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(0, 0, 0, 0.4);
-}
-
+#contact-form input.invalid, #contact-form textarea.invalid { border-color: var(--error-color); }
+.error-msg { color: var(--error-color); font-size: 0.78rem; display: block; margin-top: 4px; }
 #contact-form button {
   background: var(--accent);
   color: #FFF;
-  padding: 12px 30px;
+  padding: 10px 24px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
 }
-
-#contact-form button:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--accent-glow);
-}
-
-/* 10. FOOTER */
-.site-footer {
+.success-alert {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
   text-align: center;
-  padding: 30px;
-  background: rgba(11, 11, 20, 0.9);
-  border-top: 1px solid var(--border-color);
-  margin-top: 50px;
 }
 
-.site-footer a {
-  color: var(--text-secondary);
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
+/* 8. FOOTER */
+.site-footer { text-align: center; padding: 25px; background: rgba(11, 11, 20, 0.9); border-top: 1px solid var(--border-color); margin-top: 40px; }
+.site-footer a { color: var(--text-secondary); margin: 0 12px; text-decoration: none; }
 
-.site-footer a:hover {
-  color: var(--accent);
+/* 9. RESPONSIVE */
+@media (max-width: 768px) {
+  main { padding: 0 12px; }
+  section { padding: 20px; }
+  .social-links { flex-wrap: wrap; }
+  .main-nav { justify-content: flex-start; }
 }
