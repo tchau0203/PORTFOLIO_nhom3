@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initTypedRole();
   initImageFallback();
   initContactForm();
+  initReveal();
+  initTextRun();
+  initHeroTyping();
 });
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -262,4 +265,134 @@ function initContactForm() {
       setTimeout(() => { success.style.display = "none"; }, 6000);
     }
   });
+}
+
+// 11. Hiện dần các thẻ khi cuộn tới
+function initReveal() {
+  const items = document.querySelectorAll(".goal-card, .skill-group, .timeline li, .project-card, .awards-grid > div, .contact-info, .contact-form-wrap, .facts > div");
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { const t = e.target; t.classList.add("in"); io.unobserve(t); setTimeout(() => { t.classList.remove("reveal", "in"); t.style.transitionDelay = ""; }, 1000); } });
+  }, { threshold: 0.12 });
+  items.forEach((el, i) => { el.classList.add("reveal"); el.style.transitionDelay = (i % 3) * 80 + "ms"; io.observe(el); });
+}
+
+
+// 12. Chữ chạy theo thanh cuộn: lướt tới đâu, chữ sáng lên tới đó
+function initTextRun() {
+  const targets = document.querySelectorAll([
+    ".hero-lead", ".goal-eyebrow", ".sec-head h2", ".goal-head h2", ".goal-lead",
+    ".goal-card h3", ".goal-list li", ".skill-group h3", ".skill-name", ".chips li",
+    ".timeline time", ".timeline h3", ".timeline p",
+    ".project-body h3", ".project-body p",
+    ".awards-grid h3", ".plain-list li", ".hobby-card span",
+    ".contact-info h3", ".contact-info p", ".contact-form-wrap h3"
+  ].join(","));
+
+  // Bọc từng từ trong <span class="tw">, giữ nguyên thẻ con (strong, a...)
+  const wrapWords = (root) => {
+    const words = [];
+    const walk = (node) => {
+      [...node.childNodes].forEach((child) => {
+        if (child.nodeType === 3) {
+          if (!child.nodeValue.trim()) return;
+          const frag = document.createDocumentFragment();
+          child.nodeValue.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            const span = document.createElement("span");
+            span.className = "tw";
+            span.textContent = part;
+            frag.appendChild(span);
+            words.push(span);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1 && !child.classList.contains("ico") && !child.classList.contains("tl-icon") && child.getAttribute("aria-hidden") !== "true") {
+          walk(child);
+        }
+      });
+    };
+    walk(root);
+    return words;
+  };
+
+  const items = [];
+  targets.forEach((el) => {
+    const words = wrapWords(el);
+    if (words.length) items.push({ el, words });
+  });
+
+  const clamp = (v) => Math.max(0, Math.min(1, v));
+
+  const update = () => {
+    const vh = window.innerHeight;
+    const start = vh * 0.95;   // chữ bắt đầu sáng khi mép trên khối chữ chạm vạch này
+    const end = vh * 0.6;      // sáng hết khi lên tới vạch này
+    const atBottom = window.scrollY + vh >= document.documentElement.scrollHeight - 4;
+
+    items.forEach(({ el, words }) => {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -50 || r.top > vh + 50) {
+        // ngoài màn hình: trên cao thì đã đọc xong, dưới thấp thì chưa tới
+        const v = r.bottom < 0 ? 1 : 0;
+        if (el._v !== v) { words.forEach((w) => (w.style.opacity = 0.2 + 0.8 * v)); el._v = v; }
+        return;
+      }
+      const p = atBottom ? 1 : clamp((start - r.top) / (start - end));
+      const lit = p * words.length;
+      words.forEach((w, i) => { w.style.opacity = (0.2 + 0.8 * clamp(lit - i)).toFixed(2); });
+      el._v = -1;
+    });
+  };
+
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { update(); ticking = false; });
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  window.addEventListener("load", update);
+  update();
+}
+
+
+// 13. Tiêu đề banner: từ trống, chữ chạy hiện ra từng ký tự
+function initHeroTyping() {
+  const h1 = document.querySelector(".hero h1");
+  if (!h1) return;
+
+  const text = h1.textContent.trim();
+  h1.setAttribute("aria-label", text);
+  h1.textContent = "";
+
+  // Mỗi ký tự là một <span> ẩn sẵn: bố cục cố định (không bị giật), chữ gradient giữ nguyên
+  const chars = [...text].map((ch) => {
+    const s = document.createElement("span");
+    s.className = "ch";
+    s.setAttribute("aria-hidden", "true");
+    s.textContent = ch;
+    h1.appendChild(s);
+    return s;
+  });
+
+  const caret = document.createElement("span");
+  caret.className = "type-caret";
+  caret.setAttribute("aria-hidden", "true");
+  h1.insertBefore(caret, chars[0]);
+
+  const START = 700;   // chờ trước khi bắt đầu gõ (ms)
+  const SPEED = 70;    // thời gian giữa hai ký tự (ms)
+  let i = 0;
+
+  const typeNext = () => {
+    if (i >= chars.length) { setTimeout(() => caret.remove(), 1500); return; }
+    chars[i].classList.add("on");
+    chars[i].after(caret);          // con trỏ đi theo ký tự vừa gõ
+    const prev = chars[i].textContent;
+    i++;
+    setTimeout(typeNext, /[,.]/.test(prev) ? SPEED * 5 : SPEED);   // dừng nhẹ sau dấu phẩy
+  };
+  setTimeout(typeNext, START);
 }
