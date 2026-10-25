@@ -49,22 +49,43 @@ const members = [
       facebook: "https://www.facebook.com/whos.gb",
       email: "baong2006@ut.edu",
     },
-   
   },
   {
-   
+    id: "bao2",
+    name: "Nguyễn Gia Bảo ",
+    mssv: "075206006255",
+    role: "Frontend / Fullstack Developer",
+    avatar: "images/bao2/avatar.jpg",
+    intro: "Đam mê thiết kế giao diện web hiện đại, tối ưu trải nghiệm người dùng và xây dựng hệ thống mạng tương tác cao.",
+    skills: ["HTML5 / CSS3 / JavaScript", "React.js", "Node.js & Express", "Socket.IO / WebRTC", "RESTful API & Git"],
+    link: "members/bao2.html",
+    social: {
+      github: "https://github.com/bao2-dev",
+      facebook: "https://www.facebook.com/share/1E7DgjVGeA/?mibextid=wwXIfr",
+      email: "baong6255@ut.edu.vn",
+    },
   },
-  
-    
   {
-    
+    id: "qanh",
+    name: "Lê Quốc Anh",
+    mssv: "MSSV - 080206004361",
+    role: "Thành Viên - Frontend/Backend Developer",
+    avatar: "images/qanh/avatar.jpg",
+    intro: "Đam mê thiết kế giao diện web hiện đại, tối ưu trải nghiệm người dùng và xây dựng hệ thống mạng tương tác cao.",
+    skills: ["HTML5", "CSS3", "JavaScript","Python","C++","Git"],
+    link: "members/qanh.html",
+    social: {
+      github: "https://github.com/quocanh06-git",
+      facebook: "https://facebook.com/wuoc.ahn06",
+      email: "quocanh13570@gmail.com",
+    },
   },
   {
     id: "huy",
     name: "Trần Gia Huy",
     mssv: "052206016219",
     role: "Thành viên / QA/QC Engineer",
-    avatar: "images/huy/avatar.jpg", 
+    avatar: "images/huy/avatar.jpg",
     intro: "Theo đuổi sự hoàn hảo của phần mềm thông qua việc kiểm thử tự động, phân tích hệ thống và thiết kế Test Case tối ưu.",
     skills: ["C#", "C++", "Python", "Software Testing", "SQL"],
     link: "members/huy.html",
@@ -72,10 +93,21 @@ const members = [
       github: "https://github.com/huyt1270",
       facebook: "#",
       email: "huyt1270@gmail.com",
-    }
-
+    },
   },
   {
-   
+    id: "nam",
+    name: "Nam - cập nhật sau",
+    mssv: "MSSV - cập nhật sau",
+    role: "Vai trò - cập nhật sau",
+    avatar: "images/nam/avatar.jpg",
+    intro: "Giới thiệu ngắn - cập nhật sau",
+    skills: ["HTML5", "CSS3", "JavaScript"],
+    link: "members/nam.html",
+    social: {
+      github: "https://github.com/",
+      facebook: "https://facebook.com/",
+      email: "nam@example.com",
+    },
   },
 ];
