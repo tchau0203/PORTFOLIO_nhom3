@@ -52,12 +52,34 @@ const members = [
    
   },
   {
-   
+    id: "bao2",
+    name: "Nguyễn Gia Bảo ",
+    mssv: "075206006255",
+    role: "Frontend / Fullstack Developer",
+    avatar: "images/bao2/avatar.jpg",
+    intro: "Đam mê thiết kế giao diện web hiện đại, tối ưu trải nghiệm người dùng và xây dựng hệ thống mạng tương tác cao.",
+    skills: ["HTML5 / CSS3 / JavaScript", "React.js", "Node.js & Express", "Socket.IO / WebRTC", "RESTful API & Git"],
+    link: "members/bao2.html",
+    social: {
+      github: "https://github.com/bao2-dev",
+      facebook: "https://www.facebook.com/share/1E7DgjVGeA/?mibextid=wwXIfr",
+      email: "baong6255@ut.edu.vn",
+    },
   },
-  
-    
   {
-    
+    id: "qanh",
+    name: "Lê Quốc Anh",
+    mssv: "MSSV - 080206004361",
+    role: "Thành Viên - Frontend/Backend Developer",
+    avatar: "images/qanh/avatar.jpg",
+    intro: "Đam mê thiết kế giao diện web hiện đại, tối ưu trải nghiệm người dùng và xây dựng hệ thống mạng tương tác cao.",
+    skills: ["HTML5", "CSS3", "JavaScript","Python","C++","Git"],
+    link: "members/qanh.html",
+    social: {
+      github: "https://github.com/quocanh06-git",
+      facebook: "https://facebook.com/wuoc.ahn06",
+      email: "quocanh13570@gmail.com",
+    },
   },
   {
     id: "huy",
@@ -72,8 +94,21 @@ const members = [
       github: "https://github.com/huyt1270",
       facebook: "#",
       email: "huyt1270@gmail.com",
-    }
-
+    },
   },
-  
+  {
+    id: "nam",
+    name: "Trần Hoàng Nam",
+    mssv: "068206000088",
+    role: "Thành viên / Frontend Developer",
+    avatar: "images/nam/avatar.png",
+    intro: "Xây dựng giao diện người dùng bắt mắt, tối ưu trải nghiệm người dùng và mang lại nhiều tính năng.",
+    skills: ["C++", "Python", "JavaScript", "SQL", "Git"],
+    link: "members/nam.html",
+    social: {
+      github: "https://github.com/Hoangnam2606",
+      facebook: "https://facebook.com",
+      email: "namth0088@ut.edu.vn",
+    },
+  },
 ];
