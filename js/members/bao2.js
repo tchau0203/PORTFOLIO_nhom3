@@ -1,4 +1,4 @@
-/*
+﻿/*
  * bao2.js
  * Mục đích: JS riêng của Nguyễn Gia Bảo (Bảo 2) - Cung cấp các tính năng tương tác sáng tạo cá nhân.
  * AI ĐƯỢC SỬA – Chỉ Bảo 2 sửa.
@@ -59,8 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector(".theme-icon") : null;
 
   // Khôi phục giao diện từ localStorage hoặc system preference
-  const savedTheme = localStorage.getItem("theme") || 
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const savedTheme = localStorage.getItem("theme") || "dark";
 
   document.documentElement.setAttribute("data-theme", savedTheme);
   updateThemeIcon(savedTheme);
@@ -271,3 +270,4 @@ document.addEventListener("DOMContentLoaded", () => {
     inputEl.focus();
   }
 });
+
