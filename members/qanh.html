@@ -1,97 +1,362 @@
 <!--
   qanh.html
-  Mục đích: Trang portfolio cá nhân của Quỳnh Anh.
-  AI ĐƯỢC SỬA – Chỉ Quỳnh Anh sửa.
+  Mục đích: Trang portfolio cá nhân của Quốc Anh.
+  AI ĐƯỢC SỬA – Chỉ Quốc Anh sửa.
 -->
 <!DOCTYPE html>
 <html lang="vi" data-theme="light">
-<head>
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Quỳnh Anh</title>
+  <meta name="description" content="Portfolio cá nhân của Lê Quốc Anh, sinh viên Công nghệ thông tin định hướng Frontend Developer.">
+  <title>Portfolio - Lê Quốc Anh</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/member-common.css">
   <link rel="stylesheet" href="../css/members/qanh.css">
 </head>
 <body>
 
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!--  Header / Navbar -->
   <header class="site-header">
-    <nav class="main-nav">
-      <a href="#about">Giới thiệu</a>
-      <a href="#goal">Mục tiêu</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#education">Học vấn</a>
-      <a href="#projects">Dự án</a>
-      <a href="#awards">Thành tích</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
+    <div class="header-inner">
+      <a href="#about" class="brand">Lê Quốc Anh</a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Điều hướng chính">
+        <a href="#about">Giới thiệu</a>
+        <a href="#goal">Mục tiêu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#education">Học vấn</a>
+        <a href="#projects">Dự án</a>
+        <a href="#awards">Thành tích</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <div class="header-tools">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Chuyển chế độ sáng/tối">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <section id="about">
-      <h1>Giới thiệu bản thân</h1>
-    </section>
+    <!--1. Giới thiệu bản thân (Banner) -->
+    <section id="about" class="hero">
+      <div class="hero-text">
+        <span class="hero-badge">👋 Chào mừng đến với portfolio của mình</span>
+        <p class="hero-role">Sinh viên Công nghệ thông tin, định hướng <span id="typedRole" data-words="Frontend Developer|UI Designer|Web Developer">Frontend Developer</span><span class="caret" aria-hidden="true"></span></p>
+        <h1>Xin chào, mình là Lê Quốc Anh</h1>
+        <p class="hero-lead">
+          Mình đang là sinh viên năm 3 ngành Công nghệ thông tin, chuyên ngành "Khoa học dữ liệu và Trí tuệ nhân tạo" tại trường Đại học Giao thông vận tải TP.HCM(UTH). 
+          Mình thích biến những ý tưởng trên giấy thành giao diện web gọn gàng, dễ dùng.
+          Đang học lập trình web và muốn làm ra những sản phẩm mà người dùng dùng lần đầu cũng hiểu ngay.
+        </p>
 
-    <section id="goal">
-      <h2>Mục tiêu nghề nghiệp</h2>
-    </section>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-solid">🚀 Xem dự án</a>
+          <a href="#contact" class="btn-line">✉️ Liên hệ với mình</a>
+        </div>
 
-    <section id="skills">
-      <h2>Kỹ năng</h2>
-    </section>
-
-    <section id="education">
-      <h2>Học vấn &amp; Hoạt động</h2>
-    </section>
-
-    <section id="projects">
-      <h2>Dự án cá nhân</h2>
-      <div class="project-card">
-        <h3>Tên dự án 1</h3>
-        <p>Mô tả dự án 1 - cập nhật sau</p>
+        <dl class="facts">
+          <div><dt><span class="ico" aria-hidden="true">👤</span>Họ tên</dt><dd>Lê Quốc Anh</dd></div>
+          <div><dt><span class="ico" aria-hidden="true">🆔</span>MSSV</dt><dd>080206004361</dd></div>
+          <div><dt><span class="ico" aria-hidden="true">🎓</span>Ngành học</dt><dd>Công nghệ thông tin(chuyên ngành Khoa học dữ liệu và Trí tuệ nhân tạo)</dd></div>
+          <div><dt><span class="ico" aria-hidden="true">💼</span>Vị trí định hướng</dt><dd>Frontend Developer</dd></div>
+          <div class="fact-status"><dt><span class="ico" aria-hidden="true">📚</span>Trạng thái</dt><dd class="status-ok"><span class="status-dot" aria-hidden="true"></span>Đang theo học</dd></div>
+        </dl>
       </div>
-      <div class="project-card">
-        <h3>Tên dự án 2</h3>
-        <p>Mô tả dự án 2 - cập nhật sau</p>
+
+      <figure class="hero-photo">
+        <div class="photo-frame">
+          <img src="../images/qanh/avatar.jpg" alt="Ảnh đại diện của Quốc Anh" width="400" height="400">
+          <span class="photo-fallback" aria-hidden="true">QA</span>
+        </div>
+        <span class="float-badge fb1">💻 Frontend</span>
+        <span class="float-badge fb2">🎨 UI Design</span>
+        <span class="float-badge fb3">🤖 AI &amp; Data</span>
+      </figure>
+    </section>
+
+    <!-- 2. Mục tiêu nghề nghiệp -->
+    <section id="goal" class="block">
+      <header class="goal-head">
+        <span class="goal-eyebrow">Định hướng tương lai</span>
+        <h2><span class="sec-icon" aria-hidden="true">🎯</span>Mục tiêu nghề nghiệp</h2>
+        <p class="goal-lead">
+          Có nền tảng vững về HTML, CSS, JavaScript và tư duy thiết kế để bổ trợ cho chuyên ngành của mình,
+          tham gia làm sản phẩm thật trong một đội ngũ chuyên nghiệp, bổ sung kinh nghiệm và kỹ năng.
+        </p>
+      </header>
+
+      <div class="goal-cards">
+        <article class="goal-card goal-card--short">
+          <div class="goal-icon" aria-hidden="true">🎯</div>
+          <h3>Mục tiêu ngắn hạn (1 năm)</h3>
+          <ul class="goal-list">
+            <li><strong>Thành thạo HTML, CSS, JavaScript:</strong> Có thể tự xây dựng các trang web đơn giản, đúng chuẩn và responsive.</li>
+            <li><strong>Hoàn thành tốt các đồ án Web:</strong> Làm ra sản phẩm hoàn chỉnh, giao diện gọn gàng, dễ dùng.</li>
+            <li><strong>Làm quen Git &amp; GitHub:</strong> Quản lý mã nguồn và phối hợp làm việc nhóm hiệu quả.</li>
+          </ul>
+        </article>
+
+        <article class="goal-card goal-card--long">
+          <div class="goal-icon" aria-hidden="true">🌟</div>
+          <h3>Mục tiêu dài hạn (2 – 5 năm)</h3>
+          <ul class="goal-list">
+            <li><strong>Học React &amp; thực tập (2 – 3 năm):</strong> Làm việc nhóm với Git và đi thực tập tại công ty phần mềm.</li>
+            <li><strong>Trở thành Frontend Developer chính (5 năm):</strong> Hiểu cả UX lẫn hiệu năng để tạo ra sản phẩm chất lượng.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section id="awards">
-      <h2>Chứng chỉ &amp; Giải thưởng</h2>
+    <!-- 3. Kỹ năng -->
+    <section id="skills" class="block">
+      <header class="sec-head">
+        <span class="goal-eyebrow">Năng lực</span>
+        <h2><span class="sec-icon" aria-hidden="true">🛠️</span>Kỹ năng</h2>
+      </header>
+      <div class="skills-wrap">
+        <div class="skill-group">
+          <h3><span class="ico" aria-hidden="true">💻</span>Chuyên môn</h3>
+          <ul class="skill-list">
+            <li class="skill" data-level="85"><span class="skill-name">HTML5</span><span class="skill-bar"><i></i></span><span class="skill-pct">85%</span></li>
+            <li class="skill" data-level="80"><span class="skill-name">CSS3</span><span class="skill-bar"><i></i></span><span class="skill-pct">80%</span></li>
+            <li class="skill" data-level="65"><span class="skill-name">JavaScript</span><span class="skill-bar"><i></i></span><span class="skill-pct">65%</span></li>
+            <li class="skill" data-level="55"><span class="skill-name">Python</span><span class="skill-bar"><i></i></span><span class="skill-pct">55%</span></li>
+            <li class="skill" data-level="50"><span class="skill-name">Java</span><span class="skill-bar"><i></i></span><span class="skill-pct">50%</span></li>
+            <li class="skill" data-level="60"><span class="skill-name">Git và GitHub</span><span class="skill-bar"><i></i></span><span class="skill-pct">60%</span></li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3><span class="ico" aria-hidden="true">🤝</span>Kỹ năng mềm</h3>
+          <ul class="chips">
+            <li>Làm việc nhóm</li>
+            <li>Quản lý thời gian</li>
+            <li>Giao tiếp rõ ràng</li>
+            <li>Tư duy giải quyết vấn đề</li>
+            <li>Tự học nhanh</li>
+          </ul>
+          <h3 class="sub"><span class="ico" aria-hidden="true">🧰</span>Công cụ</h3>
+          <ul class="chips">
+            <li>VS Code</li>
+            <li>Figma</li>
+            <li>Chrome DevTools</li>
+            <li>Canva</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Liên hệ</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="contact-name">Họ tên</label>
-          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
-          <span class="error-message"></span>
+    <!-- 4. Học vấn & Hoạt động -->
+    <section id="education" class="block">
+      <header class="sec-head">
+        <span class="goal-eyebrow">Hành trình</span>
+        <h2><span class="sec-icon" aria-hidden="true">🎓</span>Học vấn &amp; Hoạt động</h2>
+      </header>
+      <ol class="timeline">
+        <li>
+          <span class="tl-icon" aria-hidden="true">💻</span>
+          <time>2026 - nay</time>
+          <h3>Làm portfolio cá nhân</h3>
+          <p>Xây dựng portfolio cá nhân để giới thiệu bản thân và các dự án đã thực hiện.</p>
+        </li>
+        <li>
+          <span class="tl-icon" aria-hidden="true">🍽️</span>
+          <time>2025</time>
+          <h3>Từng làm đồ án về "Nền tảng SaaS quản lý nhà hàng thông minh với gọi món qua QR" trong môn Công nghệ phần mềm</h3>
+          <p>Xây dựng nền tảng Menu QR trực tuyến theo mô hình SaaS đa tenant, gồm web app cho nhà hàng và web/mobile app cho khách hàng</p>
+        </li>
+        <li>
+          <span class="tl-icon" aria-hidden="true">🎓</span>
+          <time>2024</time>
+          <h3>Sinh viên ngành Công nghệ thông tin(chuyên ngành Khoa học dữ liệu và Trí tuệ nhân tạo)</h3>
+          <p>Trường Đại học Giao thông Vận tải thành phố Hồ Chí Minh(UTH). Học các môn lập trình cơ bản, cấu trúc dữ liệu và phát triển web.</p>
+        </li>
+        <li>
+          <span class="tl-icon" aria-hidden="true">🏫</span>
+          <time>2022 - 2024</time>
+          <h3>Trường THPT Đông Thạnh tại Long An</h3>
+          <p>Tốt nghiệp, có thế mạnh môn Toán và Tin học.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 5. Dự án cá nhân -->
+    <section id="projects" class="block">
+      <header class="sec-head">
+        <span class="goal-eyebrow">Sản phẩm</span>
+        <h2><span class="sec-icon" aria-hidden="true">🚀</span>Dự án cá nhân</h2>
+      </header>
+
+      <div class="projects-grid">
+        <article class="project-card"
+                 data-detail="Trang web giới thiệu bản thân gồm 7 phần, hỗ trợ chế độ sáng/tối, menu di động và form liên hệ có kiểm tra dữ liệu. Dự án giúp mình luyện Flexbox, Grid và DOM.">
+          <div class="project-img">
+            <img src="../images/qanh/portfolio.png" alt="Ảnh dự án Portfolio cá nhân" loading="lazy">
+            <span class="img-fallback" aria-hidden="true">Ảnh dự án 1</span>
+          </div>
+          <div class="project-body">
+            <h3>Portfolio cá nhân</h3>
+            <p>Website giới thiệu bản thân với giao diện sáng/tối và form liên hệ.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="project-links">
+              <button type="button" class="link-btn project-more">🔍 Xem chi tiết</button>
+              <a href="https://github.com/tchau0203/PORTFOLIO_nhom3.git" class="link-btn" target="_blank" rel="noopener">💻 Mã nguồn</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card"
+                 data-detail="Nền tảng SaaS quản lý nhà hàng thông minh với gọi món qua QR. Khách quét mã QR tại bàn để xem thực đơn và gọi món, nhà hàng nhận và quản lý đơn ngay trên hệ thống. Xây dựng nền tảng Menu QR trực tuyến theo mô hình SaaS đa tenant, gồm web app cho nhà hàng và web/mobile app cho khách hàng">
+          <div class="project-img">
+            <img src="../images/qanh/saas.webp" alt="Ảnh dự án nền tảng quản lý nhà hàng" loading="lazy">
+            <span class="img-fallback" aria-hidden="true">Ảnh dự án 2</span>
+          </div>
+          <div class="project-body">
+            <h3>Quản lý nhà hàng thông minh</h3>
+            <p>Nền tảng SaaS quản lý nhà hàng thông minh với gọi món qua QR.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>Java</li><li>Python</li><li>Figma</li><li>Supabase</li><li>QR Code</li></ul>
+            <div class="project-links">
+              <button type="button" class="link-btn project-more">🔍 Xem chi tiết</button>
+              <a href="https://github.com/Nhut-26/SaaS-Smart-Restaurant-Management-Platform-with-QR-Code-Ordering" class="link-btn" target="_blank" rel="noopener">💻 Mã nguồn</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Chứng chỉ, giải thưởng &amp; sở thích -->
+    <section id="awards" class="block">
+      <header class="sec-head">
+        <span class="goal-eyebrow">Điểm nhấn</span>
+        <h2><span class="sec-icon" aria-hidden="true">🏆</span>Chứng chỉ, giải thưởng &amp; sở thích</h2>
+      </header>
+      <div class="awards-grid">
+        <div>
+          <h3><span class="ico" aria-hidden="true">🏆</span>Chứng chỉ và giải thưởng</h3>
+          <ul class="plain-list">
+            <li>Hiện tại mình chưa có chứng chỉ hay giải thưởng chính thức nào quá đáng kể.</li>
+            <li>Mình đang nỗ lực học tập để tham gia các cuộc thi học thuật và nghiên cứu khoa học sinh viên trong tương lai.</li>
+            <li>Mình sẽ cập nhật tại đây khi có thông tin về chứng chỉ hoặc giải thưởng mới sớm nhất.</li>
+          </ul>
         </div>
-        <div class="form-group">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Nhập email">
-          <span class="error-message"></span>
+        <div>
+          <h3><span class="ico" aria-hidden="true">❤️</span>Sở thích</h3>
+<ul class="hobby-grid">
+  <li class="hobby-card">
+    <div class="hobby-img">
+      <img src="../images/qanh/tkgd.jpg" alt="Thiết kế giao diện" loading="lazy">
+    </div>
+    <span>🎨 Thiết kế giao diện</span>
+  </li>
+  <li class="hobby-card">
+    <div class="hobby-img">
+      <img src="../images/qanh/ds.jpg" alt="Đọc sách" loading="lazy">
+    </div>
+    <span>📖 Đọc sách</span>
+  </li>
+  <li class="hobby-card">
+    <div class="hobby-img">
+      <img src="../images/qanh/nn.jpg" alt="Nghe nhạc" loading="lazy">
+    </div>
+    <span>🎵 Nghe nhạc</span>
+  </li>
+  <li class="hobby-card">
+    <div class="hobby-img">
+      <img src="../images/qanh/thcn.jpg" alt="Tìm hiểu công nghệ" loading="lazy">
+    </div>
+    <span>💡 Tìm hiểu công nghệ</span>
+  </li>
+  <li class="hobby-card">
+    <div class="hobby-img">
+      <img src="../images/qanh/xp.jpg" alt="Xem phim" loading="lazy">
+    </div>
+    <span>🎬 Xem phim</span>
+  </li>
+</ul>
         </div>
-        <div class="form-group">
-          <label for="contact-message">Nội dung</label>
-          <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
-          <span class="error-message"></span>
+      </div>
+    </section>
+
+    <!-- 7. Liên hệ -->
+    <section id="contact" class="block">
+      <header class="sec-head">
+        <span class="goal-eyebrow">Kết nối</span>
+        <h2><span class="sec-icon" aria-hidden="true">✉️</span>Liên hệ với mình</h2>
+      </header>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3><span class="ico" aria-hidden="true">💬</span>Hãy trò chuyện</h3>
+          <p>Bạn muốn trao đổi về dự án hoặc cơ hội thực tập? Gửi tin nhắn, mình sẽ trả lời sớm nhất.</p>
+          <ul class="plain-list">
+            <li><span class="ico" aria-hidden="true">✉️</span><strong>Email</strong> quocanh13570@gmail.com</li>
+            <li><span class="ico" aria-hidden="true">🐙</span><strong>GitHub</strong> <a href="https://github.com/quocanh06-git" target="_blank" rel="noopener">github.com/quocanh06-git</a></li> 
+            <li><span class="ico" aria-hidden="true">📘</span><strong>Facebook</strong> <a href="https://facebook.com/wuoc.ahn06" target="_blank" rel="noopener">facebook.com/wuoc.ahn06</a></li> <!-- SỬA -->
+          </ul>
         </div>
-        <button type="submit">Gửi</button>
-      </form>
-      <div id="contact-success" style="display:none;">
-        Gửi thành công! Cảm ơn bạn đã liên hệ.
+
+        <div class="contact-form-wrap">
+          <h3><span class="ico" aria-hidden="true">📝</span>Gửi tin nhắn</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Họ tên</label>
+              <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên" autocomplete="name">
+              <span class="error-message" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="Nhập email" autocomplete="email">
+              <span class="error-message" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Nội dung</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Nhập nội dung"></textarea>
+              <span class="error-message" role="alert"></span>
+            </div>
+            <button type="submit" class="btn-solid">📨 Gửi tin nhắn</button>
+          </form>
+          <div id="contact-success" style="display:none;" role="status">
+            ✅ Gửi thành công! Cảm ơn bạn đã liên hệ.
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <a href="#" class="btn-top">Về đầu trang</a>
-    <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
+    <p>© 2026 Lê Quốc Anh, Thành viên Nhóm 03</p>
+    <div class="footer-links">
+      <a href="#" class="btn-top">⬆️ Về đầu trang</a>
+      <a href="../index.html" class="btn-home">🏠 Về trang chủ nhóm</a>
+    </div>
   </footer>
+
+  <!-- Hộp thoại chi tiết dự án -->
+  <dialog id="projectDialog" class="project-dialog" aria-labelledby="dialogTitle">
+    <button type="button" class="dialog-close" id="dialogClose" aria-label="Đóng">×</button>
+    <h3 id="dialogTitle"></h3>
+    <p id="dialogText"></p>
+    <ul class="tags" id="dialogTags"></ul>
+  </dialog>
 
   <script src="../js/data.js"></script>
   <script src="../js/common.js"></script>

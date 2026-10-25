@@ -13,13 +13,13 @@
   <!-- ===== HEADER & NAV ===== -->
   <header class="site-header">
     <nav class="main-nav">
-      <a href="#about">Giới thiệu</a>
-      <a href="#goal">Mục tiêu</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#education">Học vấn</a>
-      <a href="#projects">Dự án</a>
-      <a href="#awards">Thành tích</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="#about" class="nav-link active">Giới thiệu</a>
+      <a href="#goal" class="nav-link">Mục tiêu</a>
+      <a href="#skills" class="nav-link">Kỹ năng</a>
+      <a href="#education" class="nav-link">Học vấn</a>
+      <a href="#projects" class="nav-link">Dự án</a>
+      <a href="#awards" class="nav-link">Thành tích</a>
+      <a href="#contact" class="nav-link">Liên hệ</a>
     </nav>
   </header>
 
@@ -30,9 +30,9 @@
     <section id="about" class="hero-section">
       <img src="../images/bao1/avatar.jpg" alt="Ngô Gia Bảo" class="avatar">
       <h1>Ngô Gia Bảo</h1>
-      <span class="role-badge">Frontend Developer</span>
-      <p class="mssv">MSSV: 054206002006</p>
-      <p class="intro-text">Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.</p>
+      <span class="role-badge" id="typing-text">Frontend Developer</span>
+      <p class="mssv">MSSV: 054206002006 | Chuyên ngành: Công nghệ Thông tin</p>
+      <p class="intro-text">Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm người dùng và điều phối tiến độ dự án nhóm.</p>
       <div class="social-links">
         <a href="https://github.com/gbao2510" target="_blank" class="social-btn">GitHub</a>
         <a href="https://www.facebook.com/whos.gb" target="_blank" class="social-btn">Facebook</a>
@@ -46,24 +46,23 @@
       <div class="goal-grid">
         <div class="goal-card">
           <div class="goal-tag">Ngắn hạn</div>
-          <p>Hoàn thiện kỹ năng Frontend (HTML, CSS, React) và hoàn thành xuất sắc đồ án môn học.</p>
+          <p>Hoàn thiện thành thạo kỹ năng Frontend (HTML5, CSS3, React) và đạt điểm giỏi đồ án môn Lập trình Web.</p>
         </div>
         <div class="goal-card">
           <div class="goal-tag">Dài hạn</div>
-          <p>Trở thành một lập trình viên Full-stack chuyên nghiệp, có khả năng quản lý và triển khai các dự án thực tế.</p>
+          <p>Trở thành Lập trình viên Full-stack chuyên nghiệp, tham gia xây dựng các hệ thống phần mềm quy mô lớn.</p>
         </div>
       </div>
     </section>
 
     <!-- Section 3: Kỹ năng -->
     <section id="skills">
-      <h2>Kỹ năng</h2>
+      <h2>Kỹ năng chuyên môn</h2>
       <div class="skills-grid">
-        <span class="skill-chip">HTML5</span>
-        <span class="skill-chip">CSS3</span>
+        <span class="skill-chip">HTML5 / CSS3</span>
         <span class="skill-chip">JavaScript</span>
-        <span class="skill-chip">React</span>
-        <span class="skill-chip">Git</span>
+        <span class="skill-chip">React.js</span>
+        <span class="skill-chip">Git &amp; GitHub</span>
         <span class="skill-chip">Python</span>
         <span class="skill-chip">C++</span>
       </div>
@@ -73,54 +72,71 @@
     <section id="education">
       <h2>Học vấn &amp; Hoạt động</h2>
       <ul>
-        <li><strong>Kinh nghiệm:</strong> Từng hoạt động tự do trên nền tảng Fastlance.</li>
-        <li><strong>Hoạt động ngoại khóa:</strong> Tham gia thử nghiệm (Beta Playtest) dự án Golden Spatula trên iOS.</li>
-        <li><strong>Rèn luyện:</strong> Tích cực tham gia các thử thách thể thao, chạy bộ trên Strava.</li>
+        <li><strong>Kinh nghiệm thực tế:</strong> Từng hoạt động tự do (Freelance) thiết kế giao diện trên nền tảng Fastlance.</li>
+        <li><strong>Thử nghiệm phần mềm:</strong> Tham gia Beta Playtest đánh giá trải nghiệm người dùng cho dự án Golden Spatula trên iOS.</li>
+        <li><strong>Rèn luyện thể thao:</strong> Tích cực tham gia các giải chạy bộ trực tuyến và thử thách rèn luyện thể lực trên Strava.</li>
       </ul>
     </section>
 
-    <!-- Section 5: Dự án cá nhân -->
+    <!-- Section 5: Dự án cá nhân (Đầy đủ tiêu chí 6) -->
     <section id="projects">
       <h2>Dự án cá nhân</h2>
+      
       <div class="project-card">
-        <h3>Dự án Web Portfolio</h3>
-        <p>Website giới thiệu thông tin cá nhân và nhóm, xây dựng giao diện chuẩn bằng HTML/CSS/JS thuần, tuân thủ quy trình quản lý mã nguồn qua Git và GitHub.</p>
+        <div class="project-info">
+          <h3>1. Website Portfolio Nhóm 03</h3>
+          <p>Hệ thống website giới thiệu thông tin cá nhân và nhóm, thiết kế giao diện chuẩn Responsive, tích hợp Dark Mode và hiệu ứng mượt mà.</p>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span>
+          </div>
+          <a href="https://github.com/gbao2510" target="_blank" class="project-link">Xem mã nguồn GitHub &rarr;</a>
+        </div>
       </div>
+
       <div class="project-card">
-        <h3>Quản lý kho mã nguồn</h3>
-        <p>Thường xuyên sử dụng GitHub để lưu trữ, quản lý các dự án phần mềm và công cụ hỗ trợ phát triển mã nguồn.</p>
+        <div class="project-info">
+          <h3>2. Ứng dụng Quản lý &amp; Công cụ Đa năng</h3>
+          <p>Các bài tập checkpoint và công cụ lập trình C#/Python hỗ trợ xử lý chuỗi tiếng Việt, phân tích byte và quản lý mã nguồn cá nhân.</p>
+          <div class="project-tech">
+            <span>C#</span><span>Python</span><span>VS 2022</span>
+          </div>
+          <a href="https://github.com/gbao2510" target="_blank" class="project-link">Xem kho Repository &rarr;</a>
+        </div>
       </div>
     </section>
 
-    <!-- Section 6: Chứng chỉ & Giải thưởng -->
+    <!-- Section 6: Chứng chỉ & Sở thích -->
     <section id="awards">
-      <h2>Chứng chỉ &amp; Giải thưởng</h2>
+      <h2>Chứng chỉ &amp; Sở thích</h2>
       <ul>
-        <li>Đã từng tham gia và tìm hiểu về kỳ thi chứng chỉ Google Certified Educator.</li>
-        <li><strong>Sở thích:</strong> Thời trang streetwear, tập gym, trải nghiệm các tựa game eSports.</li>
+        <li><strong>Chứng chỉ / Khóa học:</strong> Đã tìm hiểu và hoàn thành các khóa học nền tảng Google Certified Educator.</li>
+        <li><strong>Sở thích cá nhân:</strong> Thời trang streetwear, tập luyện thể hình (Gym), trải nghiệm các tựa game eSports.</li>
       </ul>
     </section>
 
-    <!-- Section 7: Form liên hệ -->
+    <!-- Section 7: Form liên hệ (Tiêu chí 15) -->
     <section id="contact">
-      <h2>Liên hệ</h2>
-      <form id="contact-form">
+      <h2>Liên hệ với tôi</h2>
+      <form id="contact-form" novalidate>
         <div class="form-group">
-          <label for="contact-name">Họ tên</label>
-          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
+          <label for="contact-name">Họ tên *</label>
+          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên của bạn">
+          <small class="error-msg" id="name-error"></small>
         </div>
         <div class="form-group">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Nhập email">
+          <label for="contact-email">Email *</label>
+          <input type="email" id="contact-email" name="email" placeholder="Nhập địa chỉ email">
+          <small class="error-msg" id="email-error"></small>
         </div>
         <div class="form-group">
-          <label for="contact-message">Nội dung</label>
-          <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
+          <label for="contact-message">Nội dung liên hệ *</label>
+          <textarea id="contact-message" name="message" rows="4" placeholder="Nhập nội dung tin nhắn..."></textarea>
+          <small class="error-msg" id="message-error"></small>
         </div>
-        <button type="submit">Gửi</button>
+        <button type="submit">Gửi tin nhắn</button>
       </form>
-      <div id="contact-success" style="display:none;">
-        Gửi thành công! Cảm ơn bạn đã liên hệ.
+      <div id="contact-success" style="display:none;" class="success-alert">
+        &check; Gửi tin nhắn thành công! Cảm ơn bạn đã liên hệ.
       </div>
     </section>
 
@@ -129,13 +145,12 @@
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <a href="#" class="btn-top">Về đầu trang</a>
-    <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
+    <a href="../index.html" class="btn-home">&larr; Về trang chủ nhóm</a>
   </footer>
 
   <!-- ===== JS ===== -->
   <script src="../js/data.js"></script>
   <script src="../js/common.js"></script>
-  <script src="../js/contact.js"></script>
   <script src="../js/members/bao1.js"></script>
 
 </body>
