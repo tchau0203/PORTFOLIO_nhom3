@@ -97,17 +97,18 @@ const members = [
   },
   {
     id: "nam",
-    name: "Nam - cập nhật sau",
-    mssv: "MSSV - cập nhật sau",
-    role: "Vai trò - cập nhật sau",
-    avatar: "images/nam/avatar.jpg",
-    intro: "Giới thiệu ngắn - cập nhật sau",
-    skills: ["HTML5", "CSS3", "JavaScript"],
+    name: "Trần Hoàng Nam",
+    mssv: "068206000088",
+    role: "Thành viên / Frontend Developer",
+    avatar: "images/nam/avatar.png",
+    intro: "Xây dựng giao diện người dùng bắt mắt, tối ưu trải nghiệm người dùng và mang lại nhiều tính năng.",
+    skills: ["C++", "Python", "JavaScript", "SQL", "Git"],
     link: "members/nam.html",
     social: {
-      github: "https://github.com/",
-      facebook: "https://facebook.com/",
-      email: "nam@example.com",
+      github: "https://github.com/Hoangnam2606",
+      facebook: "https://facebook.com",
+      email: "namth0088@ut.edu.vn",
     },
   },
 ];
+
