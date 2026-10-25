@@ -49,7 +49,6 @@ const members = [
       facebook: "https://www.facebook.com/whos.gb",
       email: "baong2006@ut.edu",
     },
-   
   },
   {
     id: "bao2",
@@ -86,7 +85,7 @@ const members = [
     name: "Trần Gia Huy",
     mssv: "052206016219",
     role: "Thành viên / QA/QC Engineer",
-    avatar: "images/huy/avatar.jpg", 
+    avatar: "images/huy/avatar.jpg",
     intro: "Theo đuổi sự hoàn hảo của phần mềm thông qua việc kiểm thử tự động, phân tích hệ thống và thiết kế Test Case tối ưu.",
     skills: ["C#", "C++", "Python", "Software Testing", "SQL"],
     link: "members/huy.html",
@@ -112,3 +111,4 @@ const members = [
     },
   },
 ];
+
