@@ -56,7 +56,19 @@ const members = [
   },
   
     
-  {
+  {id: "qanh",
+    name: "Lê Quốc Anh",
+    mssv: "080206004361",
+    role: "Thành viên / Frontend Developer",
+    avatar: "images/qanh/avatar.jpg",
+    intro: "Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.",
+    skills: ["HTML5", "CSS3", "Python", "C++", "Git"],
+    link: "members/qanh.html",
+    social: {
+      github: "https://github.com/quocanh06-git",
+      facebook: "https://www.facebook.com/wuoc.ahn06",
+      email: "quocanh13570@gmail.com",
+    }
     
   },
   {
