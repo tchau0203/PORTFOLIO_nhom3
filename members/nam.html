@@ -4,99 +4,107 @@
   AI ĐƯỢC SỬA – Chỉ Nam sửa.
 -->
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Nam</title>
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/member-common.css">
-  <link rel="stylesheet" href="../css/members/nam.css">
-</head>
-<body>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090911" />
+    <meta name="description" content="Portfolio của Trần Hoàng Nam — Frontend Developer." />
+    <title>Trần Hoàng Nam — Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/members/nam.css" />
+    <script src="../js/members/nam.js" defer></script>
+  </head>
+  <body>
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <nav class="main-nav">
-      <a href="#about">Giới thiệu</a>
-      <a href="#goal">Mục tiêu</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#education">Học vấn</a>
-      <a href="#projects">Dự án</a>
-      <a href="#awards">Thành tích</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
-  </header>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Hoàng Nam, về đầu trang"><span class="wordmark-mark">n.</span><span>portfolio<span class="wordmark-dot">/26</span></span></a>
+      <nav class="nav-shell" aria-label="Điều hướng chính">
+        <a class="nav-link is-active" href="#gioi-thieu">Giới thiệu</a>
+        <a class="nav-link" href="#muc-tieu">Mục tiêu</a>
+        <a class="nav-link" href="#ky-nang">Kỹ năng</a>
+        <a class="nav-link" href="#hoc-van">Học vấn</a>
+        <a class="nav-link" href="#du-an">Dự án</a>
+        <a class="nav-link" href="#lien-he">Liên hệ</a>
+      </nav>
+      <a class="header-cta" href="#lien-he">Let's talk <span>↗</span></a>
+    </header>
 
-  <main>
-
-    <section id="about">
-      <h1>Giới thiệu bản thân</h1>
-    </section>
-
-    <section id="goal">
-      <h2>Mục tiêu nghề nghiệp</h2>
-    </section>
-
-    <section id="skills">
-      <h2>Kỹ năng</h2>
-    </section>
-
-    <section id="education">
-      <h2>Học vấn &amp; Hoạt động</h2>
-    </section>
-
-    <section id="projects">
-      <h2>Dự án cá nhân</h2>
-      <div class="project-card">
-        <h3>Tên dự án 1</h3>
-        <p>Mô tả dự án 1 - cập nhật sau</p>
-      </div>
-      <div class="project-card">
-        <h3>Tên dự án 2</h3>
-        <p>Mô tả dự án 2 - cập nhật sau</p>
-      </div>
-    </section>
-
-    <section id="awards">
-      <h2>Chứng chỉ &amp; Giải thưởng</h2>
-    </section>
-
-    <section id="contact">
-      <h2>Liên hệ</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="contact-name">Họ tên</label>
-          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
-          <span class="error-message"></span>
+    <main id="home">
+      <section class="hero section-wrap" id="gioi-thieu">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> SINH VIÊN CÔNG NGHỆ · FRONTEND DEVELOPER</div>
+          <h1>Xin chào,<br />mình là <span class="gradient-text">Hoàng Nam.</span></h1>
+          <p class="hero-description">Mình biến những dòng code thành trải nghiệm số <span class="text-soft">thân thiện, chỉn chu và có cá tính.</span></p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#du-an">Khám phá dự án <span>↘</span></a>
+            <a class="button button-quiet" href="#lien-he">Kết nối với mình <span>↗</span></a>
+          </div>
+          <div class="hero-meta"><span><i></i> Sẵn sàng học hỏi & cộng tác</span><span class="meta-divider"></span><span>Việt Nam · UTC+7</span></div>
         </div>
-        <div class="form-group">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Nhập email">
-          <span class="error-message"></span>
+
+        <div class="hero-visual" aria-label="Thẻ hồ sơ 3D của Trần Hoàng Nam">
+          <div class="scene-grid" aria-hidden="true"></div>
+          <div class="orbit orbit--outer" aria-hidden="true"></div>
+          <div class="orbit orbit--inner" aria-hidden="true"></div>
+          <div class="float-chip chip-code"><span class="chip-icon">&lt;/&gt;</span><span>building with code</span></div>
+          <div class="float-chip chip-star"><span>✳</span> curious by nature</div>
+          <div class="profile-card" id="tilt-card">
+            <div class="card-topline"><span>HỒ SƠ CÁ NHÂN</span><span class="card-spark">✳</span></div>
+            <div class="portrait-wrap">
+              <div class="portrait-halo"></div>
+              <div class="portrait portrait--photo" role="img" aria-label="Ảnh đại diện Trần Hoàng Nam"><img class="portrait-photo" src="../images/nam/avatar.png" alt="" /><span class="portrait-caption">ẢNH ĐẠI DIỆN</span></div>
+              <span class="portrait-orbit-dot"></span>
+            </div>
+            <div class="card-name">Trần Hoàng Nam</div>
+            <div class="card-role">Frontend Developer <span>✦</span></div>
+            <div class="card-line"></div>
+            <div class="card-bottom"><span>UT · MSSV</span><span>068206000088</span></div>
+          </div>
+          <div class="visual-caption"><span class="caption-line"></span>DESIGNING WITH INTENTION</div>
         </div>
-        <div class="form-group">
-          <label for="contact-message">Nội dung</label>
-          <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
-          <span class="error-message"></span>
+        <a href="#muc-tieu" class="scroll-cue"><span class="scroll-cue-line"></span> CUỘN ĐỂ KHÁM PHÁ</a>
+      </section>
+
+      <section class="about section-wrap" id="muc-tieu">
+        <div class="section-heading"><span class="section-index">01 / ĐỊNH HƯỚNG</span><h2>Mỗi trải nghiệm tốt<br />đều bắt đầu từ <span class="gradient-text">sự thấu hiểu.</span></h2></div>
+        <div class="about-content"><span class="quote-mark">“</span><div><p class="about-lead">Mình yêu thích việc kết hợp tư duy logic với thiết kế trực quan để tạo nên giao diện vừa đẹp mắt vừa dễ sử dụng.</p><p class="about-copy">Mục tiêu của mình là không ngừng trau dồi kỹ năng Frontend, hiểu sâu hơn về trải nghiệm người dùng và cùng đội nhóm xây dựng những sản phẩm hữu ích.</p><div class="about-note"><span class="note-mark">✳</span><span>Luôn tò mò. Luôn thử nghiệm. Luôn tiến về phía trước.</span></div></div></div>
+      </section>
+
+      <section class="skills section-wrap" id="ky-nang">
+        <div class="section-heading section-heading-row"><div><span class="section-index">02 / BỘ CÔNG CỤ</span><h2>Những thứ mình <span class="gradient-text">dùng mỗi ngày.</span></h2></div><p class="heading-aside">Nền tảng vững chắc,<br />sẵn sàng cho điều mới.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card skill-card-featured"><div class="skill-number">01</div><div class="skill-icon icon-js">JS</div><h3>JavaScript</h3><p>Tương tác & logic giao diện</p><span class="skill-tag">CORE SKILL</span></article>
+          <article class="skill-card"><div class="skill-number">02</div><div class="skill-icon icon-cpp">C<span>++</span></div><h3>C++</h3><p>Tư duy lập trình nền tảng</p></article>
+          <article class="skill-card"><div class="skill-number">03</div><div class="skill-icon icon-py">Py</div><h3>Python</h3><p>Giải quyết bài toán linh hoạt</p></article>
+          <article class="skill-card"><div class="skill-number">04</div><div class="skill-icon icon-sql">▤</div><h3>SQL</h3><p>Làm việc với dữ liệu</p></article>
+          <article class="skill-card"><div class="skill-number">05</div><div class="skill-icon icon-git">⌘</div><h3>Git</h3><p>Quản lý phiên bản & cộng tác</p></article>
         </div>
-        <button type="submit">Gửi</button>
-      </form>
-      <div id="contact-success" style="display:none;">
-        Gửi thành công! Cảm ơn bạn đã liên hệ.
-      </div>
-    </section>
+        <div class="skills-footnote"><span class="tiny-cross">✳</span> Đang trên hành trình nâng cấp bản thân mỗi ngày</div>
+      </section>
 
-  </main>
+      <section class="education section-wrap" id="hoc-van">
+        <div class="section-heading"><span class="section-index">03 / HỌC VẤN</span><h2>Đang xây nền móng<br />cho <span class="gradient-text">hành trình dài.</span></h2></div>
+        <div class="education-panel"><div class="education-stamp">UT<span>✳</span></div><div class="education-info"><span class="section-index">MÔI TRƯỜNG HỌC TẬP</span><h3>Đại học Giao thông vận tải TP. Hồ Chí Minh</h3><p>Sinh viên · MSSV 068206000088</p></div><div class="education-side"><span class="status-pill"><i></i> ĐANG HỌC TẬP</span><span class="education-foot">Học hôm nay,<br />tạo giá trị ngày mai.</span></div></div>
+      </section>
 
-  <footer class="site-footer">
-    <a href="#" class="btn-top">Về đầu trang</a>
-    <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
-  </footer>
+      <section class="projects section-wrap" id="du-an">
+        <div class="section-heading section-heading-row"><div><span class="section-index">04 / DỰ ÁN</span><h2>Những sản phẩm <span class="gradient-text">mình xây dựng.</span></h2></div><p class="heading-aside">Ứng dụng kiến thức vào<br />những sản phẩm thực tế.</p></div>
+        <div class="project-grid">
+          <article class="project-card project-card-main"><div class="project-art art-orbit"><div class="art-sun"></div><div class="art-ring art-ring-a"></div><div class="art-ring art-ring-b"></div><div class="art-label">01<br />/ 02</div><span class="art-tag">SPRING BOOT / REACT</span></div><div class="project-info"><div><span class="project-kicker">NỀN TẢNG HỌC TẬP TRỰC TUYẾN</span><h3>CollapShere</h3></div><span class="project-arrow">↗</span><p>Website học tập được xây dựng với Spring Boot và React, hỗ trợ trải nghiệm học tập trực tuyến.</p></div></article>
+          <article class="project-card"><div class="project-art art-code"><span class="code-ghost">TCP</span><span class="code-line line-one"></span><span class="code-line line-two"></span><span class="code-line line-three"></span><div class="art-label">02<br />/ 02</div><span class="art-tag">PYTHON / SOCKET</span></div><div class="project-info"><div><span class="project-kicker">ỨNG DỤNG MẠNG CƠ BẢN</span><h3>Ứng dụng TCP Socket</h3></div><span class="project-arrow">↗</span><p>Ứng dụng chạy đơn giản bằng Python, sử dụng TCP socket để giao tiếp giữa các chương trình.</p></div></article>
+        </div>
+      </section>
 
-  <script src="../js/data.js"></script>
-  <script src="../js/common.js"></script>
-  <script src="../js/contact.js"></script>
-  <script src="../js/members/nam.js"></script>
+      <section class="contact section-wrap" id="lien-he"><div class="contact-glow"></div><span class="section-index">05 / LỜI CHÀO ĐANG CHỜ</span><h2>Cùng làm nên<br />điều <span class="gradient-text">thú vị nhé.</span></h2><p>Một ý tưởng mới, một cơ hội học hỏi hay đơn giản là lời chào — hộp thư của mình luôn mở.</p><a class="button button-primary contact-button" href="mailto:namth0088@ut.edu.vn">Gửi email cho Nam <span>↗</span></a><div class="social-links"><a href="https://github.com/Hoangnam2606" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook <span>↗</span></a><a href="mailto:namth0088@ut.edu.vn">Email <span>↗</span></a></div><span class="contact-orbit" aria-hidden="true">✳</span></section>
+    </main>
 
-</body>
+    <footer class="site-footer"><a class="wordmark" href="#home"><span class="wordmark-mark">n.</span><span>portfolio<span class="wordmark-dot">/26</span></span></a><span>Thiết kế & phát triển với sự tò mò <span class="footer-heart">✳</span></span><a href="#gioi-thieu">LÊN ĐẦU TRANG ↑</a></footer>
+    <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+  </body>
 </html>
+

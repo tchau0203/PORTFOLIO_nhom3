@@ -21,18 +21,20 @@ const teamInfo = {
 
 const members = [
   {
-    id: "chau",
+     id: "chau",
     name: "Hồ Nguyễn Thái Châu",
-    mssv: "MSSV - cập nhật sau",
-    role: "Trưởng nhóm / Frontend Developer",
+    mssv: "054206003685",
+    role: "Trưởng nhóm",
     avatar: "images/chau/avatar.jpg",
-    intro: "Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.",
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Git"],
+    tagline: "Sinh viên Kỹ thuật & Lập trình viên tương lai",
+    intro: "Sinh viên Kỹ thuật đam mê xây dựng các sản phẩm web. Yêu thích khám phá công nghệ mới",
+    skills: ["HTML5", "CSS3", "Python", "C++", "Git"],
     link: "members/chau.html",
-    social: {
-      github: "https://github.com",
-      facebook: "https://facebook.com",
-      email: "chau@example.com",
+    social:{
+      github:"https://github.com/tchau0203",
+      facebook:"https://www.facebook.com/Thaichau020326",
+      instagram:"https://www.instagram.com/ts.chou023/",
+      email:"thaichau020326@gmail.com",
     },
   },
   {
@@ -97,17 +99,18 @@ const members = [
   },
   {
     id: "nam",
-    name: "Nam - cập nhật sau",
-    mssv: "MSSV - cập nhật sau",
-    role: "Vai trò - cập nhật sau",
-    avatar: "images/nam/avatar.jpg",
-    intro: "Giới thiệu ngắn - cập nhật sau",
-    skills: ["HTML5", "CSS3", "JavaScript"],
+    name: "Trần Hoàng Nam",
+    mssv: "068206000088",
+    role: "Thành viên / Frontend Developer",
+    avatar: "images/nam/avatar.png",
+    intro: "Xây dựng giao diện người dùng bắt mắt, tối ưu trải nghiệm người dùng và mang lại nhiều tính năng.",
+    skills: ["C++", "Python", "JavaScript", "SQL", "Git"],
     link: "members/nam.html",
     social: {
-      github: "https://github.com/",
-      facebook: "https://facebook.com/",
-      email: "nam@example.com",
+      github: "https://github.com/Hoangnam2606",
+      facebook: "https://facebook.com",
+      email: "namth0088@ut.edu.vn",
     },
   },
 ];
+
