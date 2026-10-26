@@ -1,110 +1,403 @@
-<!--
-  chau.html
-  Mục đích: Trang portfolio cá nhân của Châu.
-  AI ĐƯỢC SỬA – Chỉ Châu sửa.
--->
 <!DOCTYPE html>
 <html lang="vi" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Châu</title>
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/member-common.css">
-  <link rel="stylesheet" href="../css/members/chau.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trang web hồ sơ cá nhân — giới thiệu dự án, kỹ năng và học vấn." />
+  
+  <title>Hồ Nguyễn Thái Châu — Portfolio</title>
+
+  <!-- Google Fonts — Space Grotesk, Inter, JetBrains Mono with full Vietnamese diacritics support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap&subset=latin,vietnamese" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../css/members/chau.css" />
 </head>
-<body>
+<body class="page-chau">
 
-  <!-- ===== HEADER & NAV ===== -->
-  <header class="site-header">
-    <nav class="main-nav">
-      <a href="#about">Giới thiệu</a>
-      <a href="#goal">Mục tiêu</a>
-      <a href="#skills">Kỹ năng</a>
-      <a href="#education">Học vấn</a>
-      <a href="#projects">Dự án</a>
-      <a href="#awards">Thành tích</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
-  </header>
+  <!-- ============================== -->
+  <!-- CON TRỎ CHUỘT TÙY BIẾN (CHỈ DÀNH CHO MÁY TÍNH ĐỂ BÀN) -->
+  <!-- ============================== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
+  <!-- ============================== -->
+  <!-- THANH ĐIỀU HƯỚNG (NAVBAR) -->
+  <!-- ============================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Biểu trưng / Tên đại diện -->
+      <a href="#about" class="nav-logo" id="navLogo">
+        <span class="nav-logo-text">Thái Châu</span>
+      </a>
 
-    <section id="about">
-      <h1>Giới thiệu bản thân</h1>
-      <!-- Nội dung: ảnh đại diện, tên, MSSV, mô tả ngắn -->
-    </section>
+      <!-- Các liên kết điều hướng trên máy tính -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-section="about">Giới thiệu</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Kỹ năng</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Dự án</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Hành trình</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Liên hệ</a></li>
+        <li><a href="../index.html" class="nav-link btn-back-home" style="border: 1px solid var(--accent); border-radius: 20px; padding: 6px 14px; font-weight: 600;">← Trang nhóm</a></li>
+      </ul>
 
-    <section id="goal">
-      <h2>Mục tiêu nghề nghiệp</h2>
-      <!-- Nội dung: mục tiêu ngắn hạn, dài hạn -->
-    </section>
+      <!-- Nút chuyển đổi giao diện Sáng / Tối -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Đổi giao diện sáng/tối">
+        <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
 
-    <section id="skills">
-      <h2>Kỹ năng</h2>
-      <!-- Nội dung: danh sách kỹ năng -->
-    </section>
+      <!-- Nút mở menu di động (Hamburger) -->
+      <button class="hamburger" id="hamburger" aria-label="Mở menu điều hướng">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
 
-    <section id="education">
-      <h2>Học vấn &amp; Hoạt động</h2>
-      <!-- Nội dung: trường, khóa học, hoạt động ngoại khóa -->
-    </section>
+  <!-- Lớp phủ menu toàn màn hình trên di động -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links" id="mobileNavLinks"></ul>
+  </div>
 
-    <section id="projects">
-      <h2>Dự án cá nhân</h2>
-      <div class="project-card">
-        <h3>Tên dự án 1</h3>
-        <p>Mô tả dự án 1 - cập nhật sau</p>
+  <!-- ============================== -->
+  <!-- PHẦN GIỚI THIỆU BẢN THÂN -->
+  <!-- ============================== -->
+  <section class="section about-section" id="about">
+    <!-- Hiệu ứng mạng lưới hạt nền chỉ trong phần Giới thiệu -->
+    <div id="particles-js"></div>
+    <div class="section-container">
+      <div class="section-label reveal-up">
+        <span class="section-number">01</span>
+        <span class="section-title-small">GIỚI THIỆU BẢN THÂN</span>
       </div>
-      <div class="project-card">
-        <h3>Tên dự án 2</h3>
-        <p>Mô tả dự án 2 - cập nhật sau</p>
+
+      <!-- Tiêu đề cấp 1 (H1) chuẩn Semantic SEO & Typography -->
+      <div class="about-hero-masthead reveal-up">
+        <h1 class="about-hero-title">
+          Hồ Nguyễn Thái Châu
+        </h1>
       </div>
-    </section>
+      <div class="about-layout">
+        <!-- Khung ảnh đại diện tròn -->
+        <div class="about-avatar-col reveal-up">
+          <div class="avatar-card">
+            <div class="avatar-circle" id="avatarCircle">
+              <img id="aboutAvatar" src="../images/chau/avatar.jpg" alt="Ảnh đại diện" class="avatar-img" />
+              <div class="avatar-badge" title="Đang hoạt động / Sẵn sàng làm việc">
+                <span class="badge-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <section id="awards">
-      <h2>Chứng chỉ &amp; Giải thưởng</h2>
-      <!-- Nội dung: chứng chỉ, giải thưởng, sở thích -->
-    </section>
-
-    <section id="contact">
-      <h2>Liên hệ</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="contact-name">Họ tên</label>
-          <input type="text" id="contact-name" name="name" placeholder="Nhập họ tên">
-          <span class="error-message"></span>
+        <div class="about-grid">
+          <div class="about-text reveal-up">
+            <h2 class="section-heading">
+              Đôi nét<br/><span class="accent-text">về bản thân.</span>
+            </h2>
+            <p class="about-description" id="aboutDescription">Tôi là sinh viên năm 3 ngành Công nghệ Thông tin tại Trường Đại học Giao thông Vận tải TP.HCM. Tôi yêu thích lập trình và phát triển các ứng dụng web, đặc biệt quan tâm đến Backend và thiết kế hệ thống. Mục tiêu của tôi là không ngừng học hỏi, nâng cao tư duy lập trình, trau dồi kỹ năng làm việc nhóm và xây dựng những dự án thực tế có giá trị. Trong tương lai, tôi hướng đến trở thành một lập trình viên có chuyên môn vững vàng và khả năng phát triển các sản phẩm phần mềm hoàn chỉnh.</p>
+          </div>
+          <div class="about-highlights reveal-up" id="aboutHighlights">
+            <!-- Được đổ tự động bởi JS -->
+          </div>
         </div>
-        <div class="form-group">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Nhập email">
-          <span class="error-message"></span>
-        </div>
-        <div class="form-group">
-          <label for="contact-message">Nội dung</label>
-          <textarea id="contact-message" name="message" placeholder="Nhập nội dung"></textarea>
-          <span class="error-message"></span>
-        </div>
-        <button type="submit">Gửi</button>
-      </form>
-      <div id="contact-success" style="display:none;">
-        Gửi thành công! Cảm ơn bạn đã liên hệ.
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- ============================== -->
+  <!-- DÒNG CHỮ CHẠY NGANG (MARQUEE) -->
+  <!-- ============================== -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-content" id="marqueeContent">
+        <!-- Được đổ tự động bởi JS với danh sách kỹ năng -->
+      </div>
+    </div>
+  </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <a href="#" class="btn-top">Về đầu trang</a>
-    <a href="../index.html" class="btn-home">Về trang chủ nhóm</a>
+  <!-- ============================== -->
+  <!-- PHẦN KỸ NĂNG & CÔNG NGHỆ (TINH GỌN & HIỆN ĐẠI) -->
+  <!-- ============================== -->
+  <section class="section skills-section" id="skills">
+    <div class="section-container">
+      <div class="section-label reveal-up">
+        <span class="section-number">02</span>
+        <span class="section-title-small">KỸ NĂNG &amp; NĂNG LỰC</span>
+      </div>
+      <h2 class="section-heading reveal-up">
+        Kỹ năng chuyên môn<br/><span class="accent-text">&amp; công nghệ sử dụng.</span>
+      </h2>
+
+      <div class="skills-simple-layout reveal-up">
+        <!-- Cột trái: Kỹ năng chuyên môn lập trình -->
+        <div class="skills-simple-card">
+          <div class="skills-card-header">
+            <div>
+              <h3 class="skills-card-title">Kỹ năng Chuyên môn</h3>
+              <p class="skills-card-desc">Ngôn ngữ lập trình &amp; cơ sở dữ liệu</p>
+            </div>
+          </div>
+
+          <div class="skills-simple-list" id="technicalSkillsList">
+            <div class="skill-simple-item" data-level="75">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/javascript.png" alt="JavaScript" /></span>
+                  <span>JavaScript (ES6+)</span>
+                </span>
+                <span class="skill-simple-pct">75%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-simple-item" data-level="85">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/python.svg" alt="Python" /></span>
+                  <span>Python</span>
+                </span>
+                <span class="skill-simple-pct">85%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-simple-item" data-level="60">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/java.svg" alt="Java Core" /></span>
+                  <span>Java Core</span>
+                </span>
+                <span class="skill-simple-pct">60%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-simple-item" data-level="80">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/htmlcss.png" alt="HTML5 & CSS3" /></span>
+                  <span>HTML5 &amp; CSS3</span>
+                </span>
+                <span class="skill-simple-pct">80%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-simple-item" data-level="65">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/react.png" alt="React.js" /></span>
+                  <span>React.js</span>
+                </span>
+                <span class="skill-simple-pct">65%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-simple-item" data-level="75">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/cpp.png" alt="C / C++" /></span>
+                  <span>C / C++</span>
+                </span>
+                <span class="skill-simple-pct">75%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+
+            <div class="skill-simple-item" data-level="70">
+              <div class="skill-simple-header">
+                <span class="skill-simple-name">
+                  <span class="skill-icon-box"><img src="../images/chau/skills/postgresql.png" alt="SQL / PostgreSQL" /></span>
+                  <span>SQL / PostgreSQL</span>
+                </span>
+                <span class="skill-simple-pct">70%</span>
+              </div>
+              <div class="skill-simple-track">
+                <div class="skill-simple-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột phải: Công cụ & Kỹ năng mềm -->
+        <div class="skills-simple-card">
+          <div class="skills-simple-group">
+            <div class="skills-card-header">
+              <div>
+                <h3 class="skills-card-title">Công cụ &amp; Nền tảng</h3>
+                <p class="skills-card-desc">Môi trường phát triển và kiểm thử</p>
+              </div>
+            </div>
+            <div class="skills-simple-tags" id="toolsSkillsList">
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/antigravity.png" alt="Antigravity" /></span><span>Antigravity</span></span>
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/github.png" alt="Git & GitHub" /></span><span>Git &amp; GitHub</span></span>
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/postgresql.png" alt="PostgreSQL" /></span><span>PostgreSQL</span></span>
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/jira.png" alt="Jira" /></span><span>Jira</span></span>
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/figma.svg" alt="Figma" /></span><span>Figma</span></span>
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/claude.png" alt="Claude" /></span><span>Claude</span></span>
+              <span class="simple-tag"><span class="tag-icon-box"><img src="../images/chau/skills/canva.svg" alt="Canva" /></span><span>Canva</span></span>
+            </div>
+          </div>
+
+          <div class="skills-simple-divider"></div>
+
+          <div class="skills-simple-group">
+            <div class="skills-card-header">
+              <div>
+                <h3 class="skills-card-title">Kỹ năng mềm</h3>
+                <p class="skills-card-desc">Năng lực phối hợp &amp; làm việc nhóm</p>
+              </div>
+            </div>
+            <div class="skills-simple-tags" id="softSkillsList">
+              <span class="simple-tag">Làm việc nhóm</span>
+              <span class="simple-tag">Tính chủ động và tinh thần trách nhiệm</span>
+              <span class="simple-tag">Kỹ năng giao tiếp</span>
+              <span class="simple-tag">Quản lý thời gian</span>
+              <span class="simple-tag">Tư duy giải quyết vấn đề</span>
+              <span class="simple-tag">Khả năng tự học và làm quen với môi trường nhanh</span>
+              <span class="simple-tag">Tư duy phản biện</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- PHẦN DỰ ÁN TIÊU BIỂU -->
+  <!-- ============================== -->
+  <section class="section projects-section" id="projects">
+    <div class="section-container">
+      <div class="section-label reveal-up">
+        <span class="section-number">03</span>
+        <span class="section-title-small">DỰ ÁN</span>
+      </div>
+      <h2 class="section-heading reveal-up">
+        Những dự án<br/><span class="accent-text">cá nhân đã xây dựng.</span>
+      </h2>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Được đổ tự động bởi JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- PHẦN HỌC VẤN & HÀNH TRÌNH PHÁT TRIỂN -->
+  <!-- ============================== -->
+  <section class="section qualification-section" id="education">
+    <div class="section-container">
+      <div class="section-label reveal-up">
+        <span class="section-number">04</span>
+        <span class="section-title-small">HỌC VẤN &amp; THÀNH TÍCH</span>
+      </div>
+      <h2 class="section-heading reveal-up">
+        Hành trình<br/><span class="accent-text">phát triển của tôi.</span>
+      </h2>
+
+    
+      <div class="qualification-tabs reveal-up">
+        <button class="qualification-tab active" data-target="education" type="button">
+          <svg class="qualification-tab-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <span>Học vấn</span>
+        </button>
+
+        <button class="qualification-tab" data-target="work" type="button">
+          <svg class="qualification-tab-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          <span>Thành tích</span>
+        </button>
+      </div>
+
+      <!-- Nội dung các Tab -->
+      <div class="qualification-sections">
+        <!-- Dòng thời gian Học vấn (bố cục so le) -->
+        <div class="qualification-content active" id="qual-education">
+          <div class="qualification-timeline" id="timelineEducation"></div>
+        </div>
+
+        <!-- Dòng thời gian Thành tích / Kinh nghiệm (bố cục so le) -->
+        <div class="qualification-content" id="qual-work">
+          <div class="qualification-timeline" id="timelineWork"></div>
+        </div>
+
+    
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- PHẦN LIÊN HỆ -->
+  <!-- ============================== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <div class="section-label reveal-up">
+        <span class="section-number">05</span>
+        <span class="section-title-small">LIÊN HỆ</span>
+      </div>
+      <div class="contact-content">
+        <h2 class="contact-heading reveal-up">
+          Hãy cùng nhau<br/><span class="accent-text">hợp tác.</span>
+        </h2>
+        <p class="contact-subtext reveal-up">
+          Bạn có ý tưởng dự án hoặc muốn trao đổi công việc? Hãy liên hệ với tôi ngay nhé!
+        </p>
+        <a class="contact-email reveal-up" id="contactEmail" href="">
+          <span class="contact-email-text"></span>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </a>
+        <div class="social-links reveal-up" id="socialLinks">
+          <!-- Được đổ tự động bởi JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- CHÂN TRANG (FOOTER) -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">
+        Thiết kế &amp; phát triển bởi <strong id="footerName">Hồ Nguyễn Thái Châu</strong> &bull; Nhóm 03 &bull; ĐH Giao thông Vận tải TP.HCM
+      </p>
+    </div>
   </footer>
 
-  <!-- ===== JS ===== -->
+  <!-- ============================== -->
+  <!-- TẬP TIN KỊCH BẢN (SCRIPTS) -->
+  <!-- ============================== -->
+  <script src="../js/particles.min.js"></script>
   <script src="../js/data.js"></script>
-  <script src="../js/common.js"></script>
-  <script src="../js/contact.js"></script>
   <script src="../js/members/chau.js"></script>
 
 </body>

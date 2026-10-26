@@ -21,18 +21,20 @@ const teamInfo = {
 
 const members = [
   {
-    id: "chau",
+     id: "chau",
     name: "Hồ Nguyễn Thái Châu",
-    mssv: "MSSV - cập nhật sau",
-    role: "Trưởng nhóm / Frontend Developer",
+    mssv: "054206003685",
+    role: "Trưởng nhóm",
     avatar: "images/chau/avatar.jpg",
-    intro: "Đam mê xây dựng giao diện người dùng hiện đại, tối ưu trải nghiệm và điều phối tiến độ nhóm.",
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Git"],
+    tagline: "Sinh viên Kỹ thuật & Lập trình viên tương lai",
+    intro: "Sinh viên Kỹ thuật đam mê xây dựng các sản phẩm web. Yêu thích khám phá công nghệ mới",
+    skills: ["HTML5", "CSS3", "Python", "C++", "Git"],
     link: "members/chau.html",
-    social: {
-      github: "https://github.com",
-      facebook: "https://facebook.com",
-      email: "chau@example.com",
+    social:{
+      github:"https://github.com/tchau0203",
+      facebook:"https://www.facebook.com/Thaichau020326",
+      instagram:"https://www.instagram.com/ts.chou023/",
+      email:"thaichau020326@gmail.com",
     },
   },
   {
