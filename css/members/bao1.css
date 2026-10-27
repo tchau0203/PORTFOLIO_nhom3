@@ -1,6 +1,6 @@
 /* ============================================================
    css/members/bao1.css - Portfolio Ngô Gia Bảo
-   Full CSS: Dark Mode, Glassmorphism, Pill Nav & Fixed Alignment
+   Full CSS: Dark Mode, Glassmorphism, Pill Nav & Skills Progress Bar
    ============================================================ */
 
 /* 1. BIẾN MÀU & KHU VỰC CHUNG */
@@ -173,7 +173,7 @@ h1, h2 {
 }
 .social-btn:hover { background: var(--accent); color: #FFF; }
 
-/* 5. GOAL & SKILLS GRID */
+/* 5. GOAL GRID */
 .goal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 15px; }
 .goal-card {
   background: rgba(255, 255, 255, 0.02);
@@ -183,17 +183,99 @@ h1, h2 {
 }
 .goal-tag { font-weight: 700; color: var(--accent); font-size: 0.8rem; margin-bottom: 6px; }
 
-.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-.skill-chip {
+/* 6. KỸ NĂNG (GIAO DIỆN 2 CỘT PROGRESS BAR & CHIPS) */
+.skills-container-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.skill-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-box-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+}
+
+.skill-progress-item {
+  margin-bottom: 16px;
+}
+
+.skill-progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.skill-info span:last-child {
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #EC4899 0%, #8B5CF6 50%, #6366F1 100%);
+  border-radius: 10px;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-tags-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
   background: rgba(99, 102, 241, 0.1);
-  color: #A5A6F6;
+  color: #C7D2FE;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
+  font-weight: 500;
   border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
 }
 
-/* 6. DỰ ÁN CÁ NHÂN */
+.skill-tag:hover {
+  background: var(--accent);
+  color: #FFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* 7. DỰ ÁN CÁ NHÂN */
 .project-card {
   background: rgba(255, 255, 255, 0.02);
   padding: 22px;
@@ -213,7 +295,7 @@ h1, h2 {
 .project-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
 .project-link:hover { text-decoration: underline; }
 
-/* 7. FORM LIÊN HỆ & VALIDATE */
+/* 8. FORM LIÊN HỆ & VALIDATE */
 #contact-form .form-group { margin-bottom: 16px; text-align: left; }
 #contact-form label { display: block; margin-bottom: 6px; font-size: 0.88rem; color: var(--text-secondary); }
 #contact-form input, #contact-form textarea {
@@ -246,14 +328,17 @@ h1, h2 {
   text-align: center;
 }
 
-/* 8. FOOTER */
+/* 9. FOOTER */
 .site-footer { text-align: center; padding: 25px; background: rgba(11, 11, 20, 0.9); border-top: 1px solid var(--border-color); margin-top: 40px; }
 .site-footer a { color: var(--text-secondary); margin: 0 12px; text-decoration: none; }
 
-/* 9. RESPONSIVE */
+/* 10. RESPONSIVE */
 @media (max-width: 768px) {
   main { padding: 0 12px; }
   section { padding: 20px; }
   .social-links { flex-wrap: wrap; }
   .main-nav { justify-content: flex-start; }
+  .skills-container-grid {
+    grid-template-columns: 1fr;
+  }
 }

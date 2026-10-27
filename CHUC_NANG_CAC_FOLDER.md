@@ -44,7 +44,7 @@ PORTFOLIO_nhom3/
 │   ├── contact.js               # Logic kiểm tra dữ liệu biểu mẫu liên hệ (Form Validation)
 │   └── members/                 # [SUB-FOLDER] JavaScript riêng biệt của từng người
 │       ├── chau.js              # Script hiệu ứng riêng của Châu
-│       ├── qanh.js              # Script hiệu ứng riêng của Quỳnh Anh
+│       ├── qanh.js              # Script hiệu ứng riêng của QAnh
 │       ├── bao1.js              # Script hiệu ứng riêng của Bảo 1
 │       ├── bao2.js              # Script hiệu ứng riêng của Bảo 2
 │       ├── huy.js               # Script hiệu ứng riêng của Huy
