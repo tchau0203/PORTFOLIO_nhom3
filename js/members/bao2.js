@@ -269,5 +269,105 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     inputEl.focus();
   }
+
+  /* =========================================================
+   * 9. HIỆU ỨNG CUỘN TRANG XUẤT HIỆN (SCROLL REVEAL - INTERSECTION OBSERVER)
+   * ========================================================= */
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll(".reveal-up, .reveal-stagger, .reveal-text");
+    if (revealElements.length === 0) return;
+
+    if (!("IntersectionObserver" in window)) {
+      revealElements.forEach((el) => el.classList.add("visible"));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.08,
+      }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  }
+
+  initScrollReveal();
+
+  /* =========================================================
+   * 10. TƯƠNG TÁC XÚC XẮC 3D HAI BÊN TRÁI PHẢI
+   * ========================================================= */
+  function initSideDice() {
+    const diceCyan = document.getElementById("diceCyan");
+    const dicePink = document.getElementById("dicePink");
+    const stageLeft = document.getElementById("diceSideLeft");
+    const stageRight = document.getElementById("diceSideRight");
+    const valCyan = document.getElementById("valCyan");
+    const valPink = document.getElementById("valPink");
+
+    if (!diceCyan || !dicePink) return;
+
+    const faceRotations = {
+      1: { x: 0, y: 0 },
+      2: { x: -90, y: 0 },
+      3: { x: 0, y: -90 },
+      4: { x: 0, y: 90 },
+      5: { x: 90, y: 0 },
+      6: { x: 0, y: 180 }
+    };
+
+    const emojis = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+    function rollSingleDice(diceEl, labelEl, colorName, defaultText) {
+      diceEl.style.animation = "diceRapidRoll 0.6s cubic-bezier(0.2, 0.85, 0.35, 1.2) infinite";
+      if (labelEl) labelEl.textContent = "⚡ Đang quay...";
+
+      const rollVal = Math.floor(Math.random() * 6) + 1;
+      const rot = faceRotations[rollVal];
+
+      setTimeout(() => {
+        diceEl.style.animation = "none";
+        diceEl.style.transform = "translateY(0px) rotateX(" + (rot.x + 720) + "deg) rotateY(" + (rot.y + 720) + "deg)";
+        if (labelEl) {
+          labelEl.textContent = colorName + ": " + emojis[rollVal] + " " + rollVal;
+          labelEl.style.color = colorName === "Xanh" ? "#00f2fe" : "#ff007f";
+          labelEl.style.fontWeight = "bold";
+        }
+
+        setTimeout(() => {
+          diceEl.style.animation = "";
+          diceEl.style.transform = "";
+          if (labelEl) {
+            labelEl.textContent = defaultText;
+            labelEl.style.color = "";
+            labelEl.style.fontWeight = "";
+          }
+        }, 4500);
+      }, 700);
+    }
+
+    if (stageLeft) {
+      stageLeft.addEventListener("click", () => {
+        rollSingleDice(diceCyan, valCyan, "Xanh", "🎲 Click để tung");
+      });
+    }
+
+    if (stageRight) {
+      stageRight.addEventListener("click", () => {
+        rollSingleDice(dicePink, valPink, "Hồng", "🎲 Click để tung");
+      });
+    }
+  }
+
+  initSideDice();
 });
 
