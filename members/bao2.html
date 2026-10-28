@@ -350,7 +350,8 @@
           <div class="timeline-content">
             <span class="timeline-date">2026 – Hiện tại</span>
             <h3 class="timeline-title">Đại học - Chuyên ngành Công nghệ Thông tin</h3>
-            <p class="timeline-subtitle">Trường Đại học đào tạo Công nghệ &amp; Kỹ thuật</p>
+            <p class="timeline-subtitle">Trường Đại học Giao Thông Vận Tải Tphcm
+            </p>
             <p class="timeline-desc">
               Tập trung nghiên cứu chuyên sâu về Kiến trúc máy tính, Lập trình Web, Lập trình Mạng, Cấu trúc dữ liệu &amp; Giải thuật, Hệ quản trị cơ sở dữ liệu. GPA tích lũy dự kiến: <strong>3.5 / 4.0</strong> (Loại Giỏi).
             </p>
@@ -393,14 +394,147 @@
         <p class="section-desc">Khu vực hiển thị các sản phẩm và đồ án cá nhân</p>
       </div>
 
-      <div class="projects-empty-container">
-        <div class="empty-state-box">
-          <div class="empty-state-icon">📁</div>
-          <h3 class="empty-state-title">Chưa có dự án cá nhân</h3>
-          <p class="empty-state-desc">
-            Hiện tại tôi đang trong quá trình học tập các học phần cơ sở ngành và hoàn thiện kiến thức nền tảng. Các đồ án môn học và dự án cá nhân sẽ được cập nhật tại đây trong thời gian tới.
-          </p>
-        </div>
+      <!-- Bộ lọc danh mục dự án (Project Filter) -->
+      <div class="projects-filter">
+        <button type="button" class="filter-btn active" data-filter="all">
+          <span>Tất cả</span>
+          <span class="filter-count">2</span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="web">
+          <span>Web Development</span>
+          <span class="filter-count">1</span>
+        </button>
+        <button type="button" class="filter-btn" data-filter="network">
+          <span>Lập trình Mạng &amp; Socket</span>
+          <span class="filter-count">1</span>
+        </button>
+      </div>
+
+      <!-- Danh sách dự án Grid -->
+      <div class="projects-grid">
+        <!-- Dự án 1: PORTFOLIO_nhom3 -->
+        <article class="project-card" data-category="web">
+          <div class="project-thumb-wrapper">
+            <img 
+              src="../images/bao2/project2.svg" 
+              alt="Giao diện Đồ án PORTFOLIO_nhom3" 
+              class="project-thumb"
+              loading="lazy"
+            >
+            <div class="project-badge-overlay">
+              <span class="badge-cat web-cat">Web Frontend</span>
+              <span class="badge-status status-completed">Hoàn thành</span>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div class="project-meta-top">
+              <span class="project-role-tag">Frontend &amp; UI/UX Developer</span>
+              <span class="project-year">2026</span>
+            </div>
+
+            <h3 class="project-title">PORTFOLIO_nhom3</h3>
+            <p class="project-subtitle">Website Giới thiệu Nhóm &amp; Hồ sơ Cá nhân Hiện đại</p>
+
+            <p class="project-desc">
+              Đồ án website Portfolio nhóm gồm 6 thành viên, xây dựng theo chuẩn Semantic HTML5, hệ màu Cyberpunk Neon hiện đại (hỗ trợ Dark/Light mode), các tính năng tương tác mượt mà (ScrollSpy, bộ lọc dự án, kiểm tra form liên hệ) và quản lý tiến độ làm việc nhóm qua Git &amp; GitHub.
+            </p>
+
+            <div class="project-tech-stack">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3 Cyberpunk</span>
+              <span class="tech-tag">Vanilla JS</span>
+              <span class="tech-tag">Responsive Design</span>
+              <span class="tech-tag">Git Workflow</span>
+            </div>
+
+            <div class="project-actions">
+              <a 
+                href="https://github.com/tchau0203/PORTFOLIO_nhom3" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-project btn-github"
+                title="Xem mã nguồn PORTFOLIO_nhom3 trên GitHub"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Xem trên GitHub</span>
+              </a>
+
+              <a 
+                href="../index.html" 
+                class="btn-project btn-demo"
+                title="Xem trang chủ nhóm PORTFOLIO_nhom3"
+              >
+                <span>🚀 Xem Trang chủ</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dự án 2: UDM08_ChatApp -->
+        <article class="project-card" data-category="network">
+          <div class="project-thumb-wrapper">
+            <img 
+              src="../images/bao2/project1.svg" 
+              alt="Giao diện Ứng dụng UDM08_ChatApp" 
+              class="project-thumb"
+              loading="lazy"
+            >
+            <div class="project-badge-overlay">
+              <span class="badge-cat net-cat">Network &amp; Socket</span>
+              <span class="badge-status status-active">Hoạt động</span>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div class="project-meta-top">
+              <span class="project-role-tag">Lead Developer</span>
+              <span class="project-year">2026</span>
+            </div>
+
+            <h3 class="project-title">UDM08_ChatApp</h3>
+            <p class="project-subtitle">Hệ thống Chat Socket TCP/IP Client - Server Đa luồng</p>
+
+            <p class="project-desc">
+              Ứng dụng nhắn tin thời gian thực xây dựng bằng Python theo mô hình Client - Server qua giao thức mạng TCP/IP Socket. Hỗ trợ giao diện đồ họa (GUI), cơ chế đa luồng (multithreading) phục vụ nhiều client kết nối đồng thời, cấu trúc phòng chat và hệ thống ghi nhật ký hoạt động mạng (server log).
+            </p>
+
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python 3</span>
+              <span class="tech-tag">Socket TCP/IP</span>
+              <span class="tech-tag">Multithreading</span>
+              <span class="tech-tag">Tkinter GUI</span>
+              <span class="tech-tag">Network Protocol</span>
+            </div>
+
+            <div class="project-actions">
+              <a 
+                href="https://github.com/gbao2510/UDM08_ChatApp" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-project btn-github"
+                title="Xem mã nguồn UDM08_ChatApp trên GitHub"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Xem trên GitHub</span>
+              </a>
+
+              <a 
+                href="https://github.com/gbao2510/UDM08_ChatApp#readme" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-project btn-demo"
+                title="Xem tài liệu hướng dẫn UDM08_ChatApp"
+              >
+                <span>📖 Tài liệu README</span>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 

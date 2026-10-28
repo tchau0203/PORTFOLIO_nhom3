@@ -1,4 +1,4 @@
-﻿/*
+/*
  * bao2.js
  * Mục đích: JS riêng của Nguyễn Gia Bảo (Bảo 2) - Cung cấp các tính năng tương tác sáng tạo cá nhân.
  * AI ĐƯỢC SỬA – Chỉ Bảo 2 sửa.
@@ -269,5 +269,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     inputEl.focus();
   }
+
+  /* =========================================================
+   * 9. HIỆU ỨNG CUỘN TRANG XUẤT HIỆN (SCROLL REVEAL - INTERSECTION OBSERVER)
+   * ========================================================= */
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll(".reveal-up, .reveal-stagger, .reveal-text");
+    if (revealElements.length === 0) return;
+
+    if (!("IntersectionObserver" in window)) {
+      revealElements.forEach((el) => el.classList.add("visible"));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.08,
+      }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  }
+
+  initScrollReveal();
 });
+
+
 
