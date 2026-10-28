@@ -1,9 +1,4 @@
-/*
- * data.js
- * Mục đích: Lưu trữ dữ liệu thông tin nhóm và 6 thành viên.
- * AI ĐƯỢC SỬA – Người phụ trách khung sửa cấu trúc,
- * Mỗi người chỉ sửa object của mình trong mảng members.
- */
+
 
 // ============================================================
 // 📝 TEAM & MEMBERS DATA
