@@ -1,4 +1,4 @@
-﻿/*
+/*
  * bao2.js
  * Mục đích: JS riêng của Nguyễn Gia Bảo (Bảo 2) - Cung cấp các tính năng tương tác sáng tạo cá nhân.
  * AI ĐƯỢC SỬA – Chỉ Bảo 2 sửa.
@@ -302,6 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   initScrollReveal();
+});
 
 
 
